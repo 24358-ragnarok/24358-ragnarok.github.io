@@ -12,6 +12,10 @@
     padding: 0;
     box-sizing: border-box;
 }
+.active-link {
+    font-weight: bold;
+    color: var(--ultimate-red);
+}
 
 body {
     font-family: "Arial", sans-serif;
@@ -143,7 +147,7 @@ body {
     opacity: 0;
     animation: heroFadeIn 1s ease forwards 0.5s;
 }
-.hero-content .name{
+.hero-content .name {
     color: #ffeb29;
 }
 
@@ -299,24 +303,22 @@ footer {
     .menu-toggle {
         display: block;
     }
-    
-    
 }
 @media (max-width: 400px) {
-    .team-name{
+    .team-name {
         font-size: 1rem;
     }
-    .team-number{
+    .team-number {
         font-size: 1rem;
     }
-    .menu-toggle{
+    .menu-toggle {
         margin-left: 100px;
     }
-    .hero-content h3{
+    .hero-content h3 {
         font-size: 1.7rem;
     }
-    .hero-content .name{
-        font-size:1.4rem;
+    .hero-content .name {
+        font-size: 1.4rem;
         color: #ffeb29;
     }
 }
