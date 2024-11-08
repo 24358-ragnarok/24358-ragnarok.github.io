@@ -169,7 +169,7 @@
     opacity: 1;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 420px) {
     .members-grid {
         grid-template-columns: 1fr;
         padding: 2rem 1rem;
@@ -188,4 +188,9 @@
     .members-header p{
         font-size: 1rem;
     }
+    #btn-back-to-top{
+        bottom: 50px;
+        width: 60px;
+        height: 60px;
+      }
 }
