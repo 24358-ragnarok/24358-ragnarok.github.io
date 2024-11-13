@@ -1,137 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Match Results</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f9f9f9;
-      color: #333;
-      display: flex;
-      justify-content: center;
-      padding: 20px;
-    }
-    .container {
-      max-width: 1000px;
-      background-color: #fff;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      padding: 16px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-    .header {
-      text-align: left;
-      margin-bottom: 20px;
-    }
-    .header h2 {
-      margin: 0;
-    }
-    .table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-    .table th, .table td {
-      padding: 8px 12px;
-      text-align: center;
-      border: 1px solid #ddd;
-    }
-    .table th {
-      background-color: #f0f0f0;
-    }
-    .lightred{
-        background-color: #fde3e1;
-        color: #000e4f;
-    }
-    .lightblue{
-        background-color: #deeffd;
-        color: #000e4f;
-    }
-    .darkred{
-        color: #ffffff;
-        background-color: #f44336;
-    }
-    .darkblue{
-        color: #ffffff;
-        background-color: #2196f3;
-    }
-  </style>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Match Results</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f9f9f9;
+                color: #333;
+                display: flex;
+                justify-content: center;
+                padding: 20px;
+            }
+            .container {
+                max-width: 1000px;
+                background-color: #fff;
+                border: 1px solid #ccc;
+                border-radius: 8px;
+                padding: 16px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+            .header {
+                text-align: left;
+                margin-bottom: 20px;
+            }
+            .header h2 {
+                margin: 0;
+            }
+            .table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+            .table th,
+            .table td {
+                padding: 8px 12px;
+                text-align: center;
+                border: 1px solid #ddd;
+            }
+            .table th {
+                background-color: #f0f0f0;
+            }
+            .lightred {
+                background-color: #fde3e1;
+                color: #000e4f;
+            }
+            .lightblue {
+                background-color: #deeffd;
+                color: #000e4f;
+            }
+            .darkred {
+                color: #ffffff;
+                background-color: #f44336;
+            }
+            .darkblue {
+                color: #ffffff;
+                background-color: #2196f3;
+            }
+        </style>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-</head>
-<body>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        />
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h2>Coral_2024-11-09</h2>
+                <p>
+                    <i class="fa-solid fa-calendar-days"></i
+                    >&nbsp;&nbsp;November 9, 2024
+                </p>
+                <p>
+                    <i class="fa-solid fa-location-dot"></i>&nbsp;&nbsp;Lakewood
+                    Elementary, Norwalk, IA, USA
+                </p>
+                <p>
+                    <strong
+                        ><i class="fa-solid fa-trophy"></i>&nbsp;8th place
+                        (quals)</strong
+                    >
+                </p>
+                <p>
+                    W-L-T: 4-2-0 <br /><br />
+                    1.33 RP - 13.96 npOPR - 46.33 npAVG
+                </p>
+            </div>
 
-<div class="container">
-  <div class="header">
-    <h2>Coral_2024-11-09</h2>
-    <p><i class="fa-solid fa-calendar-days"></i>&nbsp;&nbsp;November 9, 2024</p>
-    <p><i class="fa-solid fa-location-dot"></i>&nbsp;&nbsp;Lakewood Elementary, Norwalk, IA, USA</p>
-    <p><strong><i class="fa-solid fa-trophy"></i>&nbsp;8th place (quals)</strong></p>
-    <p>W-L-T: 4-2-0 <br><br> 1.33 RP - 13.96 npOPR - 46.33 npAVG</p>
-  </div>
-  
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Match</th>
-        <th>Score</th>
-        <th colspan="2" style="background-color: #f44336; color: #ffffff;">Red Alliance</th>
-        <th colspan="2" style="background-color: #2196f3; color: #ffffff;">Blue Alliance</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Q-5</td>
-        <td>13 - 20</td>
-        <td class="lightred">18200 MST Techno Devils</td>
-        <td class="lightred">7823 Roadrunner Robotics</td>
-        <td class="lightblue">3609 Polar Technics</td>
-        <td class="darkblue">24358 Metallum Ultorum</td>
-      </tr>
-      <tr>
-        <td>Q-7</td>
-        <td>31 - 47</td>
-        <td class="lightred" >4443 Sock Monkeys</td>
-        <td class="lightred">21718 UngaBungaBongos</td>
-        <td class="darkblue" >24358 Metallum Ultorum</td>
-        <td class="lightblue" >13085 Bionic Dutch</td>
-      </tr>
-      <tr>
-        <td>Q-15</td>
-        <td>41 - 83</td>
-        <td class="lightred">25957 Quantum Igniters</td>
-        <td class="darkred">24358 Metallum Ultorum</td>
-        <td class="lightblue">22189 F.I.R.E.</td>
-        <td class="lightblue">18397 Aztechs</td>
-      </tr>
-      <tr>
-        <td>Q-17</td>
-        <td>51 - 91</td>
-        <td class="lightred">24438 Cre8 The Future</td>
-        <td class="darkred">24358 Metallum Ultorum</td>
-        <td class="lightblue">16736 Atomic Narwhals</td>
-        <td class="lightblue">14568 Norwalk RoboWarriors G</td>
-      </tr>
-      <tr>
-        <td>Q-25</td>
-        <td>25 - 51</td>
-        <td class="lightred">6147 Newbotics</td>
-        <td class="lightred">9974 T.H.O.R.</td>
-        <td class="darkblue">24358 Metallum Ultorum</td>
-        <td class="lightblue">12783 Norwalk RoboWarriors P</td>
-      </tr>
-      <tr>
-        <td>Q-30</td>
-        <td>83 - 40</td>
-        <td class="darkred">24358 Metallum Ultorum</td>
-        <td class="lightred">18397 Aztechs</td>
-        <td class="lightblue">26192 Heatwaves</td>
-        <td class="lightblue">22187 A.I.R.</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-</body>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Match</th>
+                        <th>Score</th>
+                        <th
+                            colspan="2"
+                            style="background-color: #f44336; color: #ffffff"
+                        >
+                            Red Alliance
+                        </th>
+                        <th
+                            colspan="2"
+                            style="background-color: #2196f3; color: #ffffff"
+                        >
+                            Blue Alliance
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Q-5</td>
+                        <td>13 - 20</td>
+                        <td class="lightred">18200 MST Techno Devils</td>
+                        <td class="lightred">7823 Roadrunner Robotics</td>
+                        <td class="lightblue">3609 Polar Technics</td>
+                        <td class="darkblue">24358 Metallum Ultorum</td>
+                    </tr>
+                    <tr>
+                        <td>Q-7</td>
+                        <td>31 - 47</td>
+                        <td class="lightred">4443 Sock Monkeys</td>
+                        <td class="lightred">21718 UngaBungaBongos</td>
+                        <td class="darkblue">24358 Metallum Ultorum</td>
+                        <td class="lightblue">13085 Bionic Dutch</td>
+                    </tr>
+                    <tr>
+                        <td>Q-15</td>
+                        <td>41 - 83</td>
+                        <td class="lightred">25957 Quantum Igniters</td>
+                        <td class="darkred">24358 Metallum Ultorum</td>
+                        <td class="lightblue">22189 F.I.R.E.</td>
+                        <td class="lightblue">18397 Aztechs</td>
+                    </tr>
+                    <tr>
+                        <td>Q-17</td>
+                        <td>51 - 91</td>
+                        <td class="lightred">24438 Cre8 The Future</td>
+                        <td class="darkred">24358 Metallum Ultorum</td>
+                        <td class="lightblue">16736 Atomic Narwhals</td>
+                        <td class="lightblue">14568 Norwalk RoboWarriors G</td>
+                    </tr>
+                    <tr>
+                        <td>Q-25</td>
+                        <td>25 - 51</td>
+                        <td class="lightred">6147 Newbotics</td>
+                        <td class="lightred">9974 T.H.O.R.</td>
+                        <td class="darkblue">24358 Metallum Ultorum</td>
+                        <td class="lightblue">12783 Norwalk RoboWarriors P</td>
+                    </tr>
+                    <tr>
+                        <td>Q-30</td>
+                        <td>83 - 40</td>
+                        <td class="darkred">24358 Metallum Ultorum</td>
+                        <td class="lightred">18397 Aztechs</td>
+                        <td class="lightblue">26192 Heatwaves</td>
+                        <td class="lightblue">22187 A.I.R.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
 </html>

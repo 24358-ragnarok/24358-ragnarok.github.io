@@ -12,9 +12,10 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 .active-link {
-    font-weight: bold;
-    color: var(--ultimate-red);
+  font-weight: bold;
+  color: var(--ultimate-red);
 }
 
 body {
@@ -143,7 +144,7 @@ body {
   opacity: 0;
   animation: heroFadeIn 1s ease forwards 0.5s;
 }
-.hero-content .name  {
+.hero-content .name {
   color: #ffeb29;
 }
 
@@ -317,7 +318,7 @@ footer {
     font-size: 1.4rem;
     color: #ffeb29;
   }
-  #btn-back-to-top{
+  #btn-back-to-top {
     bottom: 50px;
     width: 60px;
     height: 60px;

@@ -10,226 +10,268 @@
             src="https://plausible.io/js/script.js"
         ></script>
 
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png" />
-    <!--- this is the cdn link for font awesome icons... !--->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
-        .active-link {
-            font-weight: bold;
-        }
-    </style>
-    <style>
-        #btn-back-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            display: none;
-            border-radius: 50px;
-        }
-    </style>
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
-    <meta name="msapplication-TileColor" content="#da532c" />
-    <meta name="theme-color" content="#ffffff" />
+        <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="images/favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="images/favicon-16x16.png"
+        />
+        <!--- this is the cdn link for font awesome icons... !--->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+            integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <style>
+            .active-link {
+                font-weight: bold;
+            }
+        </style>
+        <style>
+            #btn-back-to-top {
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                display: none;
+                border-radius: 50px;
+            }
+        </style>
+        <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+        <meta name="msapplication-TileColor" content="#da532c" />
+        <meta name="theme-color" content="#ffffff" />
 
-    <!-- Open Graph -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://metallum-ultorum.github.io/members.html" />
-    <meta property="og:title" content="Metallum Ultorum - FTC Team 24358" />
-    <meta property="og:description"
-        content="Revolutionizing STEM Technology in Waukee, Iowa - FTC Robotics Team 24358" />
-    <meta property="og:image" content="images/banner.jpg" />
+        <!-- Open Graph -->
+        <meta property="og:type" content="website" />
+        <meta
+            property="og:url"
+            content="https://metallum-ultorum.github.io/members.html"
+        />
+        <meta property="og:title" content="Metallum Ultorum - FTC Team 24358" />
+        <meta
+            property="og:description"
+            content="Revolutionizing STEM Technology in Waukee, Iowa - FTC Robotics Team 24358"
+        />
+        <meta property="og:image" content="images/banner.jpg" />
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css" />
-</head>
+        <!-- Bootstrap CSS -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="styles.css" />
+    </head>
 
-<body>
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <span class="team-number">24358</span>
-                <span class="team-name">Metallum Ultorum</span>
-                <button style="margin-left: 15px;" class="navbar-toggler bg-white" type="button"
-                    data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <span class="team-number">24358</span>
+                    <span class="team-name">Metallum Ultorum</span>
+                    <button
+                        style="margin-left: 15px"
+                        class="navbar-toggler bg-white"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav"
+                        aria-controls="navbarNav"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                    >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </a>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#achievements"
+                                >Achievements</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#robots">Robots</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="members.html">Members</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <header id="home" class="hero">
+            <div class="hero-content">
+                <h3>24358</h3>
+                <h3 class="name">Metallum Ultorum</h3>
+                <p>Revolutionizing STEM Technology in Waukee, Iowa</p>
+                <a href="#about" class="cta-button">Learn More</a>
+            </div>
+        </header>
+
+        <section id="about" class="section">
+            <div class="container">
+                <h2>About Us</h2>
+                <p>
+                    We are <strong>Metallum Ultorum</strong>, an FTC Robotics
+                    team based out of <strong>Waukee, Iowa</strong>. We are both
+                    the Metallum Ultorum team and the Waukee Northwest Robotics
+                    Club, driven by the mission to revolutionize STEM technology
+                    and make it accessible to learners of all ages.
+                </p>
+            </div>
+        </section>
+
+        <section id="achievements" class="section accent-bg">
+            <div class="container">
+                <h2>Achievements</h2>
+                <div class="achievement-card">
+                    <i class="fas fa-trophy"></i>
+                    <h3>2024 Pollock League Championship</h3>
+                    <p>2nd Place - Control (Programming) Award</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="robots" class="section">
+            <div class="container">
+                <h2>Our Robots</h2>
+                <div class="robot-grid">
+                    <div class="robot-card">
+                        <h3>Outreach</h3>
+                        <p>
+                            Designed for community engagement and STEM
+                            demonstrations
+                        </p>
+                    </div>
+                    <div class="robot-card">
+                        <h3>IntoTheDeep</h3>
+                        <p>Our 2024-25 competition robot for FTC challenges</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section accent-bg">
+            <div class="container">
+                <h2>Get Involved</h2>
+                <p>
+                    Interested in following our journey or contributing to our
+                    projects?
+                </p>
+                <a
+                    href="mailto:roboticswaukee@gmail.com"
+                    class="contact-button"
+                >
+                    <i class="fas fa-envelope"></i>
+                    Contact Us
+                </a>
+            </div>
+        </section>
+
+        <footer>
+            <div class="container">
+                <p>&copy; 2024 Metallum Ultorum. All rights reserved.</p>
+                <button
+                    type="button"
+                    class="btn btn-lg"
+                    style="background-color: red"
+                    id="btn-back-to-top"
+                >
+                    <i style="color: white" class="fas fa-arrow-up"></i>
                 </button>
-            </a>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#achievements">Achievements</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#robots">Robots</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="members.html">Members</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
-                </ul>
             </div>
-        </div>
-    </nav>
+        </footer>
 
-    <header id="home" class="hero">
-        <div class="hero-content">
-            <h3>24358</h3>
-            <h3 class="name">Metallum Ultorum</h3>
-            <p>Revolutionizing STEM Technology in Waukee, Iowa</p>
-            <a href="#about" class="cta-button">Learn More</a>
-        </div>
-    </header>
+        <!-- Bootstrap JS and Popper.js -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="script.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const navbarCollapse =
+                    document.querySelector(".navbar-collapse");
+                const navLinks = document.querySelectorAll(".nav-link");
+                const sections = document.querySelectorAll("section");
 
-    <section id="about" class="section">
-        <div class="container">
-            <h2>About Us</h2>
-            <p>
-                We are <strong>Metallum Ultorum</strong>, an FTC Robotics
-                team based out of <strong>Waukee, Iowa</strong>. We are both
-                the Metallum Ultorum team and the Waukee Northwest Robotics
-                Club, driven by the mission to revolutionize STEM technology
-                and make it accessible to learners of all ages.
-            </p>
-        </div>
-    </section>
+                function setActiveLink() {
+                    let currentSection = "";
+                    sections.forEach((section) => {
+                        const sectionTop = section.offsetTop;
+                        const sectionHeight = section.clientHeight;
+                        if (window.scrollY >= sectionTop - sectionHeight / 3) {
+                            currentSection = section.id;
+                        }
+                    });
 
-    <section id="achievements" class="section accent-bg">
-        <div class="container">
-            <h2>Achievements</h2>
-            <div class="achievement-card">
-                <i class="fas fa-trophy"></i>
-                <h3>2024 Pollock League Championship</h3>
-                <p>2nd Place - Control (Programming) Award</p>
-            </div>
-        </div>
-    </section>
+                    navLinks.forEach((link) => {
+                        link.classList.remove("active-link");
+                    });
 
-    <section id="robots" class="section">
-        <div class="container">
-            <h2>Our Robots</h2>
-            <div class="robot-grid">
-                <div class="robot-card">
-                    <h3>Outreach</h3>
-                    <p>
-                        Designed for community engagement and STEM
-                        demonstrations
-                    </p>
-                </div>
-                <div class="robot-card">
-                    <h3>IntoTheDeep</h3>
-                    <p>Our 2024-25 competition robot for FTC challenges</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="section accent-bg">
-        <div class="container">
-            <h2>Get Involved</h2>
-            <p>
-                Interested in following our journey or contributing to our
-                projects?
-            </p>
-            <a href="mailto:roboticswaukee@gmail.com" class="contact-button">
-                <i class="fas fa-envelope"></i>
-                Contact Us
-            </a>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Metallum Ultorum. All rights reserved.</p>
-            <button type="button" class="btn btn-lg" style="background-color: red;" id="btn-back-to-top">
-                <i style="color: white;" class="fas fa-arrow-up"></i>
-            </button>
-        </div>
-    </footer>
-
-    <!-- Bootstrap JS and Popper.js -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const navbarCollapse = document.querySelector(".navbar-collapse");
-            const navLinks = document.querySelectorAll(".nav-link");
-            const sections = document.querySelectorAll("section");
-
-            function setActiveLink() {
-                let currentSection = "";
-                sections.forEach((section) => {
-                    const sectionTop = section.offsetTop;
-                    const sectionHeight = section.clientHeight;
-                    if (window.scrollY >= sectionTop - sectionHeight / 3) {
-                        currentSection = section.id;
+                    const activeLink = document.querySelector(
+                        `a[href="#${currentSection}"]`
+                    );
+                    if (activeLink) {
+                        activeLink.classList.add("active-link");
                     }
-                });
+                }
+
+                window.addEventListener("scroll", setActiveLink);
+
+                setActiveLink();
 
                 navLinks.forEach((link) => {
-                    link.classList.remove("active-link");
-                });
-
-                const activeLink = document.querySelector(`a[href="#${currentSection}"]`);
-                if (activeLink) {
-                    activeLink.classList.add("active-link");
-                }
-            }
-
-            window.addEventListener("scroll", setActiveLink);
-
-            setActiveLink();
-
-            navLinks.forEach((link) => {
-                link.addEventListener("click", function () {
-                    const bsCollapse = new bootstrap.Collapse(navbarCollapse, { toggle: false });
-                    bsCollapse.hide();
+                    link.addEventListener("click", function () {
+                        const bsCollapse = new bootstrap.Collapse(
+                            navbarCollapse,
+                            { toggle: false }
+                        );
+                        bsCollapse.hide();
+                    });
                 });
             });
-        });
+        </script>
+        <script>
+            //Get the button
+            let mybutton = document.getElementById("btn-back-to-top");
 
-    </script>
-    <script>
-        //Get the button
-        let mybutton = document.getElementById("btn-back-to-top");
+            // When the user scrolls down 20px from the top of the document, show the button
+            window.onscroll = function () {
+                scrollFunction();
+            };
 
-        // When the user scrolls down 20px from the top of the document, show the button
-        window.onscroll = function () {
-            scrollFunction();
-        };
-
-        function scrollFunction() {
-            if (
-                document.body.scrollTop > 20 ||
-                document.documentElement.scrollTop > 20
-            ) {
-                mybutton.style.display = "block";
-            } else {
-                mybutton.style.display = "none";
+            function scrollFunction() {
+                if (
+                    document.body.scrollTop > 20 ||
+                    document.documentElement.scrollTop > 20
+                ) {
+                    mybutton.style.display = "block";
+                } else {
+                    mybutton.style.display = "none";
+                }
             }
-        }
-        // When the user clicks on the button, scroll to the top of the document
-        mybutton.addEventListener("click", backToTop);
+            // When the user clicks on the button, scroll to the top of the document
+            mybutton.addEventListener("click", backToTop);
 
-        function backToTop() {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-        }
-    </script>
-
-</body>
-
+            function backToTop() {
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
+            }
+        </script>
+    </body>
 </html>
