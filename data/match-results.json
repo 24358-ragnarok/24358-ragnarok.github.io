@@ -13,161 +13,253 @@
       "teamNumber": "13085",
       "teamName": "Bionic Dutch",
       "record": "6-0-0",
-      "matchesPlayed": 6
+      "matchesPlayed": 6,
+      "autoScore": 1.2,
+      "driverScore": 2.7,
+      "endScore": 0.3,
+      "totalPoints": 138
     },
     {
       "rank": 2,
       "teamNumber": "14568",
       "teamName": "Norwalk RoboWarriors Gold",
       "record": "5-1-0",
-      "matchesPlayed": 6
+      "matchesPlayed": 6,
+      "autoScore": 1,
+      "driverScore": 5,
+      "endScore": 3.6,
+      "totalPoints": 101
     },
     {
       "rank": 3,
       "teamNumber": "18397",
       "teamName": "Aztechs",
       "record": "5-1-0",
-      "matchesPlayed": 6
+      "matchesPlayed": 6,
+      "autoScore": 1,
+      "driverScore": 4.6,
+      "endScore": 3.6,
+      "totalPoints": 138
     },
     {
       "rank": 4,
       "teamNumber": "16736",
       "teamName": "Atomic Narwhals",
       "record": "5-1-0",
-      "matchesPlayed": 6
+      "matchesPlayed": 6,
+      "autoScore": 1,
+      "driverScore": 2.5,
+      "endScore": 3.6,
+      "totalPoints": 137
     },
     {
       "rank": 5,
       "teamNumber": "22189",
       "teamName": "F.I.R.E.",
       "record": "5-1-0",
-      "matchesPlayed": 6
+      "matchesPlayed": 6,
+      "autoScore": 1,
+      "driverScore": 2,
+      "endScore": 1.5,
+      "totalPoints": 115
     },
     {
       "rank": 6,
       "teamNumber": "10435",
       "teamName": "Circuit Breakers",
       "record": "4-2-0",
-      "matchesPlayed": 6
+      "matchesPlayed": 6,
+      "autoScore": 0.8,
+      "driverScore": 12.6,
+      "endScore": 1.2,
+      "totalPoints": 161
     },
     {
       "rank": 7,
       "teamNumber": "12783",
       "teamName": "Norwalk RoboWarriors Purple",
       "record": "4-2-0",
-      "matchesPlayed": 6
+      "matchesPlayed": 6,
+      "autoScore": 0.8,
+      "driverScore": 5.2,
+      "endScore": 3.3,
+      "totalPoints": 91
     },
     {
       "rank": 8,
       "teamNumber": "24358",
       "teamName": "Metallum Ultorum",
       "record": "4-2-0",
-      "matchesPlayed": 6
+      "matchesPlayed": 6,
+      "autoScore": 0.8,
+      "driverScore": 3.4,
+      "endScore": 2.4,
+      "totalPoints": 83
     },
     {
       "rank": 9,
       "teamNumber": "22187",
       "teamName": "A.I.R. ",
       "record": "3-3-0",
-      "matchesPlayed": 6
+      "matchesPlayed": 6,
+      "autoScore": 0.6,
+      "driverScore": 6.1,
+      "endScore": 9.9,
+      "totalPoints": 137
     },
     {
       "rank": 10,
       "teamNumber": "25957",
       "teamName": "Quantum Igniters",
       "record": "3-3-0",
-      "matchesPlayed": 6
+      "matchesPlayed": 6,
+      "autoScore": 0.6,
+      "driverScore": 2.8,
+      "endScore": 3,
+      "totalPoints": 88
     },
     {
       "rank": 11,
       "teamNumber": "24438",
       "teamName": "Cre8 The Future",
       "record": "2-4-0",
-      "matchesPlayed": 6
+      "matchesPlayed": 6,
+      "autoScore": 0.4,
+      "driverScore": 4.7,
+      "endScore": 8.7,
+      "totalPoints": 100
     },
     {
       "rank": 12,
       "teamNumber": "26192",
       "teamName": "Heatwaves",
       "record": "2-4-0",
-      "matchesPlayed": 6
+      "matchesPlayed": 6,
+      "autoScore": 0.4,
+      "driverScore": 4.4,
+      "endScore": 1.2,
+      "totalPoints": 121
     },
     {
       "rank": 13,
       "teamNumber": "18200",
       "teamName": "MSTM Techno Devils",
       "record": "2-4-0",
-      "matchesPlayed": 6
+      "matchesPlayed": 6,
+      "autoScore": 0.4,
+      "driverScore": 3.6,
+      "endScore": 1.2,
+      "totalPoints": 89
     },
     {
       "rank": 14,
       "teamNumber": "6147",
       "teamName": "Newbotics",
       "record": "2-4-0",
-      "matchesPlayed": 6
+      "matchesPlayed": 6,
+      "autoScore": 0.4,
+      "driverScore": 2.9,
+      "endScore": 2.1,
+      "totalPoints": 54
     },
     {
       "rank": 15,
       "teamNumber": "3609",
       "teamName": "Polar Technics",
       "record": "2-4-0",
-      "matchesPlayed": 6
+      "matchesPlayed": 6,
+      "autoScore": 0.4,
+      "driverScore": 2.8,
+      "endScore": 2.7,
+      "totalPoints": 81
     },
     {
       "rank": 16,
       "teamNumber": "4443",
       "teamName": "Sock Monkeys",
       "record": "2-4-0",
-      "matchesPlayed": 6
+      "matchesPlayed": 6,
+      "autoScore": 0.4,
+      "driverScore": 2.6,
+      "endScore": 0.6,
+      "totalPoints": 123
     },
     {
       "rank": 17,
       "teamNumber": "9974",
       "teamName": "T.H.O.R. ",
       "record": "1-5-0",
-      "matchesPlayed": 6
+      "matchesPlayed": 6,
+      "autoScore": 0.2,
+      "driverScore": 4.6,
+      "endScore": 0.6,
+      "totalPoints": 161
     },
     {
       "rank": 18,
       "teamNumber": "18527",
       "teamName": "PCM Alchemists",
       "record": "1-5-0",
-      "matchesPlayed": 6
+      "matchesPlayed": 6,
+      "autoScore": 0.2,
+      "driverScore": 1.4,
+      "endScore": 1.2,
+      "totalPoints": 63
     },
     {
       "rank": 19,
       "teamNumber": "21718",
       "teamName": "UngaBungaBongos",
       "record": "1-5-0",
-      "matchesPlayed": 6
+      "matchesPlayed": 6,
+      "autoScore": 0.2,
+      "driverScore": 1,
+      "endScore": 1.2,
+      "totalPoints": 63
     },
     {
       "rank": 20,
       "teamNumber": "7823",
       "teamName": "Roadrunner Robotics",
       "record": "1-5-0",
-      "matchesPlayed": 6
+      "matchesPlayed": 6,
+      "autoScore": 0.2,
+      "driverScore": 0.9,
+      "endScore": 0.3,
+      "totalPoints": 66
     },
     {
       "rank": 21,
       "teamNumber": "14172",
       "teamName": "Disco Duckbots",
       "record": "0-0-0",
-      "matchesPlayed": 0
+      "matchesPlayed": 0,
+      "autoScore": 0,
+      "driverScore": 0,
+      "endScore": 0,
+      "totalPoints": 0
     },
     {
       "rank": 22,
       "teamNumber": "24572",
       "teamName": "G.O.A.T.",
       "record": "0-0-0",
-      "matchesPlayed": 0
+      "matchesPlayed": 0,
+      "autoScore": 0,
+      "driverScore": 0,
+      "endScore": 0,
+      "totalPoints": 0
     },
     {
       "rank": 23,
       "teamNumber": "27302",
       "teamName": "Velocity",
       "record": "0-0-0",
-      "matchesPlayed": 0
+      "matchesPlayed": 0,
+      "autoScore": 0,
+      "driverScore": 0,
+      "endScore": 0,
+      "totalPoints": 0
     }
   ]
 }
