@@ -8,12 +8,10 @@ async function updateMatchData() {
     const SEASON = "2024";
     const LEAGUE = "USIA";
     const REGION = "COR";
-    
+
     try {
         const headers = {
-            Authorization: `Basic ${Buffer.from(`:${API_KEY}`).toString(
-                "base64"
-            )}`,
+            Authorization: `Basic ${API_KEY}`,
             Accept: "application/json",
         };
 
@@ -23,7 +21,13 @@ async function updateMatchData() {
         );
 
         if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
+            console.error(`Failed to fetch data: HTTP ${response.status}`);
+            console.error("Response headers:", response.headers);
+            const errorBody = await response.text();
+            console.error("Response body:", errorBody);
+            throw new Error(
+                `HTTP error! status: ${response.status}, body: ${errorBody}`
+            );
         }
 
         const data = await response.json();
