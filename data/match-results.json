@@ -1,0 +1,25 @@
+{
+    "eventName": "Iowa League Tournament",
+    "startDate": "2024-02-24",
+    "venue": "Lakewood Elementary, Norwalk, IA",
+    "rank": 8,
+    "totalTeams": 30,
+    "wins": 4,
+    "losses": 2,
+    "ties": 0,
+    "matches": [
+        {
+            "matchNumber": 5,
+            "redScore": 13,
+            "blueScore": 20,
+            "red1": "18200",
+            "red1Name": "MST Techno Devils",
+            "red2": "7823",
+            "red2Name": "Roadrunner Robotics",
+            "blue1": "3609",
+            "blue1Name": "Polar Technics",
+            "blue2": "24358",
+            "blue2Name": "Metallum Ultorum"
+        }
+    ]
+}

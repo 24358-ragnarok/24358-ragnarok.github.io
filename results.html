@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Match Results</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f9f9f9;
+                color: #333;
+                display: flex;
+                justify-content: center;
+                padding: 20px;
+            }
+            .container {
+                max-width: 1000px;
+                background-color: #fff;
+                border: 1px solid #ccc;
+                border-radius: 8px;
+                padding: 16px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+            .header {
+                text-align: left;
+                margin-bottom: 20px;
+            }
+            .header h2 {
+                margin: 0;
+            }
+            .table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+            .table th,
+            .table td {
+                padding: 8px 12px;
+                text-align: center;
+                border: 1px solid #ddd;
+            }
+            .table th {
+                background-color: #f0f0f0;
+            }
+            .lightred {
+                background-color: #fde3e1;
+                color: #000e4f;
+            }
+            .lightblue {
+                background-color: #deeffd;
+                color: #000e4f;
+            }
+            .darkred {
+                color: #ffffff;
+                background-color: #f44336;
+            }
+            .darkblue {
+                color: #ffffff;
+                background-color: #2196f3;
+            }
+            .error {
+                text-align: center;
+                padding: 20px;
+                color: #721c24;
+                background-color: #f8d7da;
+                border: 1px solid #f5c6cb;
+                border-radius: 4px;
+            }
+        </style>
+
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        />
+        <script
+            defer
+            src="https://cloud.umami.is/script.js"
+            data-website-id="17c922fe-9bee-4f77-afcf-dca4c73cada4"
+        ></script>
+        <script defer src="js/results.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div id="header" class="header">
+                <!-- Header will be populated by JavaScript -->
+            </div>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Match</th>
+                        <th>Score</th>
+                        <th
+                            colspan="2"
+                            style="background-color: #f44336; color: #ffffff"
+                        >
+                            Red Alliance
+                        </th>
+                        <th
+                            colspan="2"
+                            style="background-color: #2196f3; color: #ffffff"
+                        >
+                            Blue Alliance
+                        </th>
+                    </tr>
+                </thead>
+                <tbody id="matchResults">
+                    <!-- Match results will be populated by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>
