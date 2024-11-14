@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Match Results</title>
+
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        />
+        <script
+            defer
+            src="https://cloud.umami.is/script.js"
+            data-website-id="17c922fe-9bee-4f77-afcf-dca4c73cada4"
+        ></script>
+        <link rel="stylesheet" href="results.css" />
+        <script src="js/results.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header" id="header">
+                <h2>Coral_2024-11-09</h2>
+                <p>
+                    <i class="fa-solid fa-calendar-days"></i
+                    >&nbsp;&nbsp;November 9, 2024
+                </p>
+                <p>
+                    <i class="fa-solid fa-location-dot"></i>&nbsp;&nbsp;Lakewood
+                    Elementary, Norwalk, IA, USA
+                </p>
+                <p>
+                    <strong
+                        ><i class="fa-solid fa-trophy"></i>&nbsp;8th place
+                        (quals)</strong
+                    >
+                </p>
+                <p>
+                    W-L-T: 4-2-0 <br /><br />
+                    1.33 RP - 13.96 npOPR - 46.33 npAVG
+                </p>
+            </div>
+
+            <div class="table-controls">
+                <input
+                    type="text"
+                    class="search-box"
+                    placeholder="Search teams..."
+                    id="searchBox"
+                    aria-label="Search teams"
+                />
+                <button
+                    class="sort-button active"
+                    data-sort="rank"
+                    aria-pressed="true"
+                >
+                    Sort by Rank
+                </button>
+                <button
+                    class="sort-button"
+                    data-sort="wins"
+                    aria-pressed="false"
+                >
+                    Sort by Wins
+                </button>
+                <button
+                    class="sort-button"
+                    data-sort="score"
+                    aria-pressed="false"
+                >
+                    Sort by Score
+                </button>
+            </div>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Team</th>
+                        <th>Record (W-L-T)</th>
+                        <th>Matches</th>
+                        <th>Auto Score</th>
+                        <th>Driver Score</th>
+                        <th>End Score</th>
+                        <th>Total Points</th>
+                    </tr>
+                </thead>
+                <tbody id="matchResults">
+                    <!-- Rankings will be populated by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>
