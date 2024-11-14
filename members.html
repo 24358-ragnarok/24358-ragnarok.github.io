@@ -1,121 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Our Team - Metallum Ultorum</title>
-
-        <!-- Add favicon links -->
-        <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="32x32"
-            href="images/favicon-32x32.png"
-        />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="16x16"
-            href="images/favicon-16x16.png"
-        />
-        <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
-        <meta name="msapplication-TileColor" content="#da532c" />
-        <meta name="theme-color" content="#ffffff" />
-        <!--- this is the cdn link for font awesome icons... !--->
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-            integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-            crossorigin="anonymous"
-            referrerpolicy="no-referrer"
-        />
-        <!-- Add Open Graph tags -->
-        <meta property="og:type" content="website" />
-        <meta
-            property="og:url"
-            content="https://metallum-ultorum.github.io/members.html"
-        />
-        <meta property="og:title" content="Our Team - Metallum Ultorum" />
-        <meta
-            property="og:description"
-            content="Meet the brilliant minds behind Metallum Ultorum - FTC Team 24358"
-        />
-        <meta property="og:image" content="images/banner.jpg" />
-
-        <!-- Bootstrap CSS -->
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-        />
-        <link rel="stylesheet" href="styles.css" />
+        <script src="js/template.js"></script>
         <link rel="stylesheet" href="members.css" />
-
-        <!-- FontAwesome -->
-        <script
-            src="https://kit.fontawesome.com/your-code-here.js"
-            crossorigin="anonymous"
-        ></script>
-        <script
-            defer
-            src="https://cloud.umami.is/script.js"
-            data-website-id="17c922fe-9bee-4f77-afcf-dca4c73cada4"
-        ></script>
     </head>
-
     <body>
-        <!-- Start of Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">
-                    <span class="team-number">24358</span>
-                    <span class="team-name">Metallum Ultorum</span>
-                    <button
-                        class="navbar-toggler"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#navbarNav"
-                        aria-controls="navbarNav"
-                        aria-expanded="false"
-                        aria-label="Toggle navigation"
-                    >
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                </a>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html#home">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html#about"
-                                >About</a
-                            >
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html#achievements"
-                                >Achievements</a
-                            >
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html#robots"
-                                >Robots</a
-                            >
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="members.html">Members</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html#contact"
-                                >Contact</a
-                            >
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <!-- End of Navbar -->
+        <div id="nav-placeholder"></div>
 
+        <!-- Page specific content -->
         <header class="members-header">
             <h1>Meet Our Team</h1>
             <p>The brilliant minds behind Metallum Ultorum</p>
@@ -303,68 +196,6 @@
             </div>
         </section>
 
-        <footer>
-            <div class="container">
-                <p>&copy; 2024 Metallum Ultorum. All rights reserved.</p>
-                <button type="button" class="btn btn-lg" id="btn-back-to-top">
-                    <i class="fas fa-arrow-up"></i>
-                </button>
-            </div>
-        </footer>
-
-        <!-- Bootstrap JS and Popper.js -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-        <script>
-            // Wait for the DOM to fully load
-            document.addEventListener("DOMContentLoaded", function () {
-                // Select the navbar toggle and collapse elements
-                const navbarCollapse =
-                    document.querySelector(".navbar-collapse");
-                const navLinks = document.querySelectorAll(".nav-link");
-
-                // Add a click event listener to each link in the navbar
-                navLinks.forEach((link) => {
-                    link.addEventListener("click", function () {
-                        // If the navbar is open (visible), collapse it
-                        const bsCollapse = new bootstrap.Collapse(
-                            navbarCollapse,
-                            {
-                                toggle: false,
-                            }
-                        );
-                        bsCollapse.hide();
-                    });
-                });
-            });
-        </script>
-
-        <script>
-            //Get the button
-            let mybutton = document.getElementById("btn-back-to-top");
-
-            // When the user scrolls down 20px from the top of the document, show the button
-            window.onscroll = function () {
-                scrollFunction();
-            };
-
-            function scrollFunction() {
-                if (
-                    document.body.scrollTop > 20 ||
-                    document.documentElement.scrollTop > 20
-                ) {
-                    mybutton.style.display = "block";
-                } else {
-                    mybutton.style.display = "none";
-                }
-            }
-            // When the user clicks on the button, scroll to the top of the document
-            mybutton.addEventListener("click", backToTop);
-
-            function backToTop() {
-                document.body.scrollTop = 0;
-                document.documentElement.scrollTop = 0;
-            }
-        </script>
+        <div id="footer-placeholder"></div>
     </body>
 </html>

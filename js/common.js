@@ -1,4 +1,24 @@
 document.addEventListener("DOMContentLoaded", function () {
+    // Scroll to top button functionality
+    const scrollButton = document.getElementById("btn-back-to-top");
+    if (scrollButton) {
+        window.onscroll = function () {
+            if (
+                document.body.scrollTop > 20 ||
+                document.documentElement.scrollTop > 20
+            ) {
+                scrollButton.style.display = "block";
+            } else {
+                scrollButton.style.display = "none";
+            }
+        };
+
+        scrollButton.addEventListener("click", () => {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        });
+    }
+
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         anchor.addEventListener("click", function (e) {
@@ -7,15 +27,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 behavior: "smooth",
             });
         });
-    });
-
-    // Mobile menu toggle
-    const menuToggle = document.querySelector(".menu-toggle");
-    const navLinks = document.querySelector(".nav-links");
-
-    menuToggle.addEventListener("click", () => {
-        navLinks.style.display =
-            navLinks.style.display === "flex" ? "none" : "flex";
     });
 
     // Navbar scroll effect
