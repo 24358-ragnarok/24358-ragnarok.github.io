@@ -34,12 +34,11 @@ jobs:
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
 
-          # Check if there are any changes
-          if [[ -n "$(git status --porcelain)" ]]; then
+          # Check if there are any changes to match-results.json
+          if [[ -n "$(git status --porcelain data/match-results.json)" ]]; then
             git add data/match-results.json
             git commit -m "Update match results data"
             git push origin ${GITHUB_REF#refs/heads/}
           else
             echo "No changes to commit"
-            q
           fi
