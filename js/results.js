@@ -18,43 +18,31 @@ class MatchData {
     }
 
     parseMatchData(data) {
-        const totalTeams = data.rankings.length;
+        const totalTeams = data.totalTeams;
         const ourTeam = data.rankings.find(
             (team) => team.teamNumber.toString() === this.teamNumber
         );
 
-        // Update event info with actual data from the API response
         const eventInfo = {
-            name: data.eventName || "Iowa League Rankings",
-            date: data.startDate || "2024",
-            location: data.venue || "Central Iowa League",
+            name: data.eventName,
+            date: data.startDate,
+            location: data.venue,
             ranking: ourTeam
                 ? `${ourTeam.rank} of ${totalTeams}`
                 : "Not ranked",
-            record: ourTeam
-                ? `${ourTeam.wins}-${ourTeam.losses}-${ourTeam.ties}`
-                : "0-0-0",
+            record: ourTeam ? ourTeam.record : "0-0-0",
             stats: {
-                // Update stats to match what the values actually represent
-                rp: ourTeam ? (ourTeam.sortOrder1 || 0).toFixed(2) : "0.00", // Auto Score
-                npOPR: ourTeam ? (ourTeam.sortOrder2 || 0).toFixed(2) : "0.00", // Driver Score
-                npAVG: ourTeam ? (ourTeam.sortOrder4 || 0).toFixed(0) : "0", // Total Points
+                // Updated to match actual data structure
+                autoScore: ourTeam ? ourTeam.autoScore.toFixed(1) : "0.0",
+                driverScore: ourTeam ? ourTeam.driverScore.toFixed(1) : "0.0",
+                totalPoints: ourTeam ? ourTeam.totalPoints.toFixed(0) : "0",
             },
         };
 
-        // Update rankings to match actual field names
+        // Rankings mapping simplified since JSON structure matches needed fields
         const rankings = data.rankings.map((team) => ({
-            rank: team.rank,
+            ...team,
             team: `${team.teamNumber} ${team.teamName}`,
-            teamNumber: team.teamNumber,
-            teamName: team.teamName,
-            record: `${team.wins}-${team.losses}-${team.ties}`,
-            matches: team.matchesPlayed,
-            wins: team.wins,
-            autoScore: team.sortOrder1.toFixed(1),
-            driverScore: team.sortOrder2.toFixed(1),
-            endScore: team.sortOrder3.toFixed(1),
-            totalPoints: team.sortOrder4.toFixed(0),
             highlight: team.teamNumber.toString() === this.teamNumber,
         }));
 
@@ -74,7 +62,7 @@ function renderMatches(rankings) {
                 team.team
             }</td>
                 <td>${team.record}</td>
-                <td>${team.matches}</td>
+                <td>${team.matchesPlayed}</td>
                 <td>
                     <div class="stats-cell">
                         <span class="stats-value">${team.autoScore}</span>
@@ -137,19 +125,19 @@ function renderHeader(eventInfo) {
 
         <div class="stats-grid">
             <div class="stat-item">
-                <span class="stat-value">${eventInfo.stats.rp}</span>
-                <span class="stat-label">Ranking Points</span>
-                <span class="stat-help">Points earned from match performance</span>
+                <span class="stat-value">${eventInfo.stats.autoScore}</span>
+                <span class="stat-label">Auto Score</span>
+                <span class="stat-help">Average points scored in autonomous</span>
             </div>
             <div class="stat-item">
-                <span class="stat-value">${eventInfo.stats.npOPR}</span>
-                <span class="stat-label">Offensive Power Rating</span>
-                <span class="stat-help">Team's scoring capability</span>
+                <span class="stat-value">${eventInfo.stats.driverScore}</span>
+                <span class="stat-label">Driver Score</span>
+                <span class="stat-help">Average points scored during driver control</span>
             </div>
             <div class="stat-item">
-                <span class="stat-value">${eventInfo.stats.npAVG}</span>
-                <span class="stat-label">Average Score</span>
-                <span class="stat-help">Average points per match</span>
+                <span class="stat-value">${eventInfo.stats.totalPoints}</span>
+                <span class="stat-label">Total Points</span>
+                <span class="stat-help">Total points scored</span>
             </div>
         </div>
     `;
@@ -170,7 +158,7 @@ function setupEventListeners() {
         renderMatches(filtered);
     });
 
-    // Sorting functionality
+    // Updated sorting functionality
     document.querySelectorAll(".sort-button").forEach((button) => {
         button.addEventListener("click", (e) => {
             const sortType = e.target.dataset.sort;
@@ -183,9 +171,11 @@ function setupEventListeners() {
                 switch (sortType) {
                     case "rank":
                         return a.rank - b.rank;
-                    case "wins":
-                        return b.wins - a.wins;
-                    case "score":
+                    case "auto":
+                        return b.autoScore - a.autoScore;
+                    case "teleop":
+                        return b.driverScore - a.driverScore;
+                    case "total":
                         return b.totalPoints - a.totalPoints;
                     default:
                         return 0;
