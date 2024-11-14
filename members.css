@@ -194,3 +194,23 @@
     height: 60px;
   }
 }
+
+/* Navbar styles */
+.navbar-toggler {
+  margin-left: 15px;
+  background-color: white;
+}
+
+/* Back to top button styles */
+#btn-back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+  border-radius: 50px;
+  background-color: red;
+}
+
+#btn-back-to-top i {
+  color: white;
+}
