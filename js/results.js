@@ -18,25 +18,26 @@ class MatchData {
     }
 
     parseMatchData(data) {
-        // Get the first team's data to determine total teams
         const totalTeams = data.rankings.length;
-
-        // Find our team's data
         const ourTeam = data.rankings.find(
             (team) => team.teamNumber.toString() === this.teamNumber
         );
 
-        // Extract event info from filename pattern "Coral_2024-11-09"
+        // Calculate event stats from the available data
         const eventInfo = {
-            name: "Coral_2024-11-09", // This should ideally come from your data
-            date: "November 9, 2024", // This should ideally come from your data
-            location: "Lakewood Elementary, Norwalk, IA, USA", // This should ideally come from your data
-            ranking: `${ourTeam?.rank} place (quals)`,
-            record: `${ourTeam?.wins}-${ourTeam?.losses}-${ourTeam?.ties}`,
+            name: "League Matches", // This needs to come from somewhere else
+            date: "2024-25", // This needs to come from somewhere else
+            location: "Norwalk, IA", // This needs to come from somewhere else
+            ranking: ourTeam
+                ? `Current Placement: ${ourTeam.rank}`
+                : "Not ranked",
+            record: ourTeam
+                ? `${ourTeam.wins}-${ourTeam.losses}-${ourTeam.ties}`
+                : "0-0-0",
             stats: {
-                rp: "1.33", // These stats should come from your data
-                npOPR: "13.96", // if available
-                npAVG: "46.33",
+                rp: ourTeam ? (ourTeam.sortOrder1 || 0).toFixed(2) : "0.00",
+                npOPR: ourTeam ? (ourTeam.sortOrder2 || 0).toFixed(2) : "0.00",
+                npAVG: ourTeam ? (ourTeam.sortOrder3 || 0).toFixed(2) : "0.00",
             },
         };
 
@@ -107,23 +108,47 @@ function renderMatches(rankings) {
 function renderHeader(eventInfo) {
     const header = document.getElementById("header");
     header.innerHTML = `
-        <h2>${eventInfo.name}</h2>
-        <p><i class="fa-solid fa-calendar-days"></i>${eventInfo.date}</p>
-        <p><i class="fa-solid fa-location-dot"></i>${eventInfo.location}</p>
-        <p><strong><i class="fa-solid fa-trophy"></i>${eventInfo.ranking}</strong></p>
-        <p><i class="fa-solid fa-chart-simple"></i>Record: ${eventInfo.record}</p>
+        <div class="event-title">
+            <h2>${eventInfo.name}</h2>
+            <div class="event-meta">
+                <p><i class="fa-solid fa-calendar-days"></i>${eventInfo.date}</p>
+                <p><i class="fa-solid fa-location-dot"></i>${eventInfo.location}</p>
+            </div>
+        </div>
+        
+        <div class="team-status">
+            <div class="ranking-badge">
+                <i class="fa-solid fa-trophy"></i>
+                <div class="ranking-details">
+                    <span class="rank-label">Current Ranking</span>
+                    <span class="rank-value">${eventInfo.ranking}</span>
+                </div>
+            </div>
+            
+            <div class="record-badge">
+                <i class="fa-solid fa-chart-simple"></i>
+                <div class="record-details">
+                    <span class="record-label">Team Record</span>
+                    <span class="record-value">${eventInfo.record}</span>
+                </div>
+            </div>
+        </div>
+
         <div class="stats-grid">
             <div class="stat-item">
                 <span class="stat-value">${eventInfo.stats.rp}</span>
                 <span class="stat-label">Ranking Points</span>
+                <span class="stat-help">Points earned from match performance</span>
             </div>
             <div class="stat-item">
                 <span class="stat-value">${eventInfo.stats.npOPR}</span>
-                <span class="stat-label">Normalized OPR</span>
+                <span class="stat-label">Offensive Power Rating</span>
+                <span class="stat-help">Team's scoring capability</span>
             </div>
             <div class="stat-item">
                 <span class="stat-value">${eventInfo.stats.npAVG}</span>
-                <span class="stat-label">Normalized Avg</span>
+                <span class="stat-label">Average Score</span>
+                <span class="stat-help">Average points per match</span>
             </div>
         </div>
     `;
