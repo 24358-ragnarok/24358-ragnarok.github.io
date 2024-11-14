@@ -23,25 +23,26 @@ class MatchData {
             (team) => team.teamNumber.toString() === this.teamNumber
         );
 
-        // Calculate event stats from the available data
+        // Update event info with actual data from the API response
         const eventInfo = {
-            name: "League Matches", // This needs to come from somewhere else
-            date: "2024-25", // This needs to come from somewhere else
-            location: "Norwalk, IA", // This needs to come from somewhere else
+            name: data.eventName || "Iowa League Rankings",
+            date: data.startDate || "2024",
+            location: data.venue || "Central Iowa League",
             ranking: ourTeam
-                ? `Current Placement: ${ourTeam.rank}`
+                ? `${ourTeam.rank} of ${totalTeams}`
                 : "Not ranked",
             record: ourTeam
                 ? `${ourTeam.wins}-${ourTeam.losses}-${ourTeam.ties}`
                 : "0-0-0",
             stats: {
-                rp: ourTeam ? (ourTeam.sortOrder1 || 0).toFixed(2) : "0.00",
-                npOPR: ourTeam ? (ourTeam.sortOrder2 || 0).toFixed(2) : "0.00",
-                npAVG: ourTeam ? (ourTeam.sortOrder3 || 0).toFixed(2) : "0.00",
+                // Update stats to match what the values actually represent
+                rp: ourTeam ? (ourTeam.sortOrder1 || 0).toFixed(2) : "0.00", // Auto Score
+                npOPR: ourTeam ? (ourTeam.sortOrder2 || 0).toFixed(2) : "0.00", // Driver Score
+                npAVG: ourTeam ? (ourTeam.sortOrder4 || 0).toFixed(0) : "0", // Total Points
             },
         };
 
-        // Format rankings
+        // Update rankings to match actual field names
         const rankings = data.rankings.map((team) => ({
             rank: team.rank,
             team: `${team.teamNumber} ${team.teamName}`,
@@ -54,7 +55,7 @@ class MatchData {
             driverScore: team.sortOrder2.toFixed(1),
             endScore: team.sortOrder3.toFixed(1),
             totalPoints: team.sortOrder4.toFixed(0),
-            highlight: team.teamNumber === this.teamNumber.toString(),
+            highlight: team.teamNumber.toString() === this.teamNumber,
         }));
 
         return { eventInfo, rankings };

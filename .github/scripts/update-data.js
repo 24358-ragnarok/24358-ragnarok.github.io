@@ -56,6 +56,10 @@ async function updateMatchData() {
                 teamName: team.teamName,
                 record: `${team.wins}-${team.losses}-${team.ties}`,
                 matchesPlayed: team.matchesPlayed,
+                autoScore: team.sortOrder1,
+                driverScore: team.sortOrder2,
+                endScore: team.sortOrder3,
+                totalPoints: team.sortOrder4,
             })),
         };
 
