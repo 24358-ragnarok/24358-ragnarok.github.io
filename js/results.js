@@ -58,7 +58,7 @@ function renderMatches(rankings) {
             return `
             <tr>
                 <td>${team.rank}</td>
-                <td class="${team.highlight ? "darkblue" : ""}">${
+                <td class="${team.highlight ? "highlight" : ""}">${
                 team.team
             }</td>
                 <td>${team.record}</td>
@@ -98,46 +98,27 @@ function renderHeader(eventInfo) {
     const header = document.getElementById("header");
     header.innerHTML = `
         <div class="event-title">
-            <h2>${eventInfo.name}</h2>
-            <div class="event-meta">
-                <p><i class="fa-solid fa-calendar-days"></i>${eventInfo.date}</p>
-                <p><i class="fa-solid fa-location-dot"></i>${eventInfo.location}</p>
-            </div>
+            <h3>${eventInfo.name}</h3>
+            <p><i class="fa-solid fa-calendar-days"></i>&nbsp;&nbsp;${eventInfo.date}</p>
+            <p><i class="fa-solid fa-location-dot"></i>&nbsp;&nbsp;${eventInfo.location}</p>
         </div>
         
-        <div class="team-status">
-            <div class="ranking-badge">
-                <i class="fa-solid fa-trophy"></i>
-                <div class="ranking-details">
-                    <span class="rank-label">Current Ranking</span>
-                    <span class="rank-value">${eventInfo.ranking}</span>
-                </div>
-            </div>
-            
-            <div class="record-badge">
-                <i class="fa-solid fa-chart-simple"></i>
-                <div class="record-details">
-                    <span class="record-label">Team Record</span>
-                    <span class="record-value">${eventInfo.record}</span>
-                </div>
-            </div>
-        </div>
-
         <div class="stats-grid">
             <div class="stat-item">
+                <span class="stat-value">${eventInfo.ranking}</span>
+                <span class="stat-label">Current Ranking</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-value">${eventInfo.record}</span>
+                <span class="stat-label">Win-Loss Record</span>
+            </div>
+            <div class="stat-item">
                 <span class="stat-value">${eventInfo.stats.autoScore}</span>
-                <span class="stat-label">Auto Score</span>
-                <span class="stat-help">Average points scored in autonomous</span>
+                <span class="stat-label">Avg Auto Score</span>
             </div>
             <div class="stat-item">
                 <span class="stat-value">${eventInfo.stats.driverScore}</span>
-                <span class="stat-label">Driver Score</span>
-                <span class="stat-help">Average points scored during driver control</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-value">${eventInfo.stats.totalPoints}</span>
-                <span class="stat-label">Total Points</span>
-                <span class="stat-help">Total points scored</span>
+                <span class="stat-label">Avg TeleOp Score</span>
             </div>
         </div>
     `;
