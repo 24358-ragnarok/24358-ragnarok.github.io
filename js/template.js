@@ -37,7 +37,7 @@ const template = {
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
-                        ${["home", "about", "achievements", "robots"]
+                        ${["home", "about", "achievements", "robots", "contact"]
                             .map(
                                 (section) => `
                             <li class="nav-item">
@@ -71,7 +71,7 @@ const template = {
         <footer>
             <div class="container">
                 <p>&copy; 2024 Metallum Ultorum. All rights reserved.</p>
-                <button type="button" class="btn btn-lg" id="btn-back-to-top">
+                <button type="button" class="btn btn-sm" id="btn-back-to-top">
                     <i class="fas fa-arrow-up"></i>
                 </button>
             </div>

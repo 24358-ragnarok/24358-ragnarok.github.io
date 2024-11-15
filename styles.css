@@ -309,10 +309,60 @@ footer {
     font-size: 1.4rem;
     color: #ffeb29;
   }
-  #btn-back-to-top {
-    bottom: 50px;
-    width: 60px;
-    height: 60px;
+  
+}
+#btn-back-to-top {
+  position: fixed;
+  right: 20px; /* Adjust this value to move it closer or further from the right edge */
+  bottom: 20px; /* Adjust this value to move it closer or further from the bottom */
+  width: 60px;  /* Increased size for better visibility */
+  height: 60px;
+  background-color: var(--ultimate-red);
+  color: white;
+  text-align: center;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  font-size: 2rem;
+  display: none; /* Initially hidden */
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 1000; /* Ensure it's above other content */
+}
+
+/* Hover Effect */
+#btn-back-to-top:hover {
+  transform: scale(1.1) rotate(15deg);  /* Slight rotation and scale effect */
+  background-color: var(--elite-gold); /* Color change on hover */
+  animation: bounce 0.5s ease infinite alternate;  /* Bounce animation */
+}
+
+/* Show the button when it gets the "show" class */
+#btn-back-to-top.show {
+  display: flex; /* Show the button */
+  opacity: 1;
+  animation: slideIn 0.5s ease-out;  /* Slide-in animation */
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateY(20px);  /* Start from below */
+    opacity: 0;  /* Initially invisible */
+  }
+  100% {
+    transform: translateY(0);  /* Slide to its original position */
+    opacity: 1;  /* Fully visible */
+  }
+}
+
+/* Bounce Animation */
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-5px);
   }
 }
 
