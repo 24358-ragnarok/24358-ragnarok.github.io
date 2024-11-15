@@ -114,8 +114,11 @@ body {
   align-items: center;
   justify-content: center;
   padding: 6rem 2rem;
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.85), rgba(255, 0, 0, 0.2)),
-    url("robot-bg.jpg") center/cover;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.85),
+    rgba(255, 0, 0, 0.2)
+  );
 }
 
 .hero::before {
@@ -292,24 +295,12 @@ footer {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-}
 @media (max-width: 420px) {
   .team-name {
     font-size: 1.2rem;
   }
   .team-number {
     font-size: 1.2rem;
-  }
-  .menu-toggle {
-    margin-left: 100px;
   }
   .hero-content h3 {
     font-size: 1.7rem;
@@ -322,5 +313,41 @@ footer {
     bottom: 50px;
     width: 60px;
     height: 60px;
+  }
+}
+
+/* Mobile Menu Styles */
+.navbar-toggler {
+  border-color: var(--ultimate-red);
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 0, 0, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.navbar-collapse {
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar-collapse.show {
+  display: block;
+}
+
+@media (max-width: 991px) {
+  .navbar-collapse {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: rgba(1, 1, 1, 0.95);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+    display: none;
+  }
+
+  .nav-link {
+    margin-left: 0;
+    padding: 0.5rem 1rem;
   }
 }

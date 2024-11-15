@@ -332,19 +332,15 @@
   border-color: var(--elite-gold);
 }
 
-.table {
-  color: white;
-  background: transparent;
-}
-
 .table th {
-  color: var(--elite-gold);
+  color: var(--elite-gold) !important;
+  background-color: color-mix(in srgb, var(--ash-black) 90%, white) !important;
   border-color: rgba(255, 0, 0, 0.2);
 }
 
 .table td {
   border-color: var(--ash-black);
-  background-color: color-mix(in srgb, var(--gear-gray) 90%, white);
+  background-color: color-mix(in srgb, var(--gear-gray) 90%, white) !important;
 }
 
 .table tr:hover {
