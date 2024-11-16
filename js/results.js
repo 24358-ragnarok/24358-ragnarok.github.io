@@ -77,12 +77,12 @@ function renderMatches(rankings) {
         .map((team) => {
             return `
             <tr>
-                <td>${team.rank}</td>
-                <td class="${team.highlight ? "highlight" : ""}">${
+                <td style="color: white;">${team.rank}</td>
+                <td style="color: white;" class="${team.highlight ? "highlight" : ""}">${
                 team.team
             }</td>
-                <td>${team.record}</td>
-                <td>${team.matchesPlayed}</td>
+                <td style="color: white;">${team.record}</td>
+                <td style="color: white;">${team.matchesPlayed}</td>
                 <td>
                     <div class="stats-cell">
                         <span class="stats-value">${team.autoScore}</span>
