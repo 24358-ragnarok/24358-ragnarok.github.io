@@ -64,14 +64,16 @@ body {
   font-size: 1.6rem;
   letter-spacing: 2px;
   text-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+  font-family: "Top Show", sans-serif;
 }
 
 .team-name {
-  color: var(--elite-gold);
+  color: white;
   font-size: 1.5rem;
   font-weight: 600;
   letter-spacing: 1px;
   text-shadow: 0 0 10px rgba(255, 235, 41, 0.2);
+  font-family: "Top Show", sans-serif;
 }
 
 .nav-link {
@@ -92,13 +94,13 @@ body {
   left: 0;
   width: 0;
   height: 2px;
-  background: linear-gradient(90deg, var(--ultimate-red), var(--elite-gold));
+  background: linear-gradient(90deg, var(--ultimate-red), white);
   transition: width 0.3s ease;
   border-radius: 2px;
 }
 
 .nav-link:hover {
-  color: var(--elite-gold);
+  color: var(--ultimate-red);
 }
 
 .nav-link:hover::after {
@@ -148,7 +150,7 @@ body {
   animation: heroFadeIn 1s ease forwards 0.5s;
 }
 .hero-content .name {
-  color: #ffeb29;
+  color: white;
 }
 
 @keyframes backgroundMove {
@@ -210,7 +212,7 @@ body {
 .section h2 {
   position: relative;
   display: inline-block;
-  color: var(--elite-gold);
+  color: white;
   margin-bottom: 3rem;
   text-align: center;
   font-size: 2.5rem;
@@ -225,7 +227,7 @@ body {
   left: 0;
   width: 100%;
   height: 3px;
-  background: linear-gradient(90deg, var(--ultimate-red), var(--elite-gold));
+  background: linear-gradient(90deg, var(--ultimate-red), white);
 }
 
 .accent-bg {
@@ -309,13 +311,12 @@ footer {
     font-size: 1.4rem;
     color: #ffeb29;
   }
-  
 }
 #btn-back-to-top {
   position: fixed;
   right: 20px; /* Adjust this value to move it closer or further from the right edge */
   bottom: 20px; /* Adjust this value to move it closer or further from the bottom */
-  width: 60px;  /* Increased size for better visibility */
+  width: 60px; /* Increased size for better visibility */
   height: 60px;
   background-color: var(--ultimate-red);
   color: white;
@@ -333,26 +334,26 @@ footer {
 
 /* Hover Effect */
 #btn-back-to-top:hover {
-  transform: scale(1.1) rotate(15deg);  /* Slight rotation and scale effect */
-  background-color: var(--elite-gold); /* Color change on hover */
-  animation: bounce 0.5s ease infinite alternate;  /* Bounce animation */
+  transform: scale(1.1) rotate(15deg); /* Slight rotation and scale effect */
+  background-color: var(--ash-black); /* Color change on hover */
+  animation: bounce 0.5s ease infinite alternate; /* Bounce animation */
 }
 
 /* Show the button when it gets the "show" class */
 #btn-back-to-top.show {
   display: flex; /* Show the button */
   opacity: 1;
-  animation: slideIn 0.5s ease-out;  /* Slide-in animation */
+  animation: slideIn 0.5s ease-out; /* Slide-in animation */
 }
 
 @keyframes slideIn {
   0% {
-    transform: translateY(20px);  /* Start from below */
-    opacity: 0;  /* Initially invisible */
+    transform: translateY(20px); /* Start from below */
+    opacity: 0; /* Initially invisible */
   }
   100% {
-    transform: translateY(0);  /* Slide to its original position */
-    opacity: 1;  /* Fully visible */
+    transform: translateY(0); /* Slide to its original position */
+    opacity: 1; /* Fully visible */
   }
 }
 
@@ -405,7 +406,7 @@ footer {
 /* Add font-face for Top Show */
 @font-face {
   font-family: "Top Show";
-  src: url("path/to/Top Show.otf") format("opentype");
+  src: url("Top Show.otf") format("opentype");
 }
 
 /* Apply the font to headers and titles */

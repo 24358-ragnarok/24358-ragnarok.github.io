@@ -15,7 +15,7 @@
         </header>
 
         <section class="members-grid">
-            <div class="member-card">
+            <div class="member-card elite">
                 <div class="member-image">
                     <img src="images/connor.png" alt="Connor Israel" />
                     <div class="member-overlay">
@@ -36,7 +36,7 @@
                 </div>
             </div>
 
-            <div class="member-card">
+            <div class="member-card elite">
                 <div class="member-image">
                     <img src="images/ben.png" alt="Ben Boonstra" />
                     <div class="member-overlay">
@@ -54,7 +54,7 @@
                         excited to build upon his previous experience to create
                         complex and in-depth technologies. He hopes to use this
                         experience as a kickstart to his software development
-                        career..
+                        career.
                     </p>
                 </div>
             </div>
@@ -146,9 +146,7 @@
                 </div>
                 <div class="member-info">
                     <h3>Deepak Pattapu</h3>
-                    <p>
-                        
-                    </p>
+                    <p></p>
                 </div>
             </div>
             <div class="member-card">
@@ -213,25 +211,25 @@
         <div id="footer-placeholder"></div>
         <script>
             document.addEventListener("DOMContentLoaded", function () {
-        const scrollButton = document.getElementById("btn-back-to-top");
-        if (scrollButton) {
-          window.onscroll = function () {
-            if (
-              document.body.scrollTop > 20 ||
-              document.documentElement.scrollTop > 20
-            ) {
-              scrollButton.style.display = "block";
-            } else {
-              scrollButton.style.display = "none";
-            }
-          };
+                const scrollButton = document.getElementById("btn-back-to-top");
+                if (scrollButton) {
+                    window.onscroll = function () {
+                        if (
+                            document.body.scrollTop > 20 ||
+                            document.documentElement.scrollTop > 20
+                        ) {
+                            scrollButton.style.display = "block";
+                        } else {
+                            scrollButton.style.display = "none";
+                        }
+                    };
 
-          scrollButton.addEventListener("click", () => {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-          });
-        }
-            })
+                    scrollButton.addEventListener("click", () => {
+                        document.body.scrollTop = 0;
+                        document.documentElement.scrollTop = 0;
+                    });
+                }
+            });
         </script>
     </body>
 </html>

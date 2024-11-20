@@ -22,7 +22,7 @@
 
 .event-title h2 {
   margin-bottom: 12px;
-  color: #1976d2;
+  color: white;
   font-size: 1.8em;
 }
 
@@ -79,7 +79,7 @@
 .record-value {
   font-size: 1.1em;
   font-weight: bold;
-  color: #2196f3;
+  color: white;
 }
 
 .stats-grid {
@@ -99,7 +99,7 @@
 .stat-value {
   font-size: 1.6em;
   font-weight: bold;
-  color: #1976d2;
+  color: white;
   display: block;
 }
 
@@ -225,7 +225,7 @@
 
 .stats-value {
   font-weight: bold;
-  color: #1976d2;
+  color: white;
   font-size: 1.1em;
 }
 
@@ -254,6 +254,10 @@
   box-shadow: 0 4px 20px rgba(255, 0, 0, 0.1);
 }
 
+.stats-overview h3 {
+  color: var(--ultimate-red);
+}
+
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -277,7 +281,7 @@
 }
 
 .stat-label {
-  color: var(--elite-gold);
+  color: white;
   font-size: 0.9rem;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -292,7 +296,6 @@
 }
 
 .rankings-section h3 {
-  color: var(--elite-gold);
   margin-bottom: 1.5rem;
 }
 
@@ -333,7 +336,7 @@
 }
 
 .table th {
-  color: var(--elite-gold) !important;
+  color: var(--ultimate-red) !important;
   background-color: color-mix(in srgb, var(--ash-black) 90%, white) !important;
   border-color: rgba(255, 0, 0, 0.2);
 }

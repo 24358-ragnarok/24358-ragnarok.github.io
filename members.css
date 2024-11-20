@@ -63,12 +63,14 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
   padding: 1rem;
+  width: fit-content;
+  margin: 0 auto;
 }
 
 .member-role {
-  background: rgba(255, 0, 0, 0.9);
+  font-family: "Top Show", sans-serif;
+  background: var(--ultimate-red);
   padding: 0.5rem 1rem;
   border-radius: 20px;
   transform: translateY(15px);
@@ -77,6 +79,12 @@
   letter-spacing: 1px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   text-align: center;
+}
+
+.elite .member-role {
+  font-weight: 800;
+  color: var(--ash-black);
+  background: var(--elite-gold);
 }
 
 .member-card:hover .member-role {
@@ -97,6 +105,10 @@
   color: var(--ultimate-red);
   margin-bottom: 1rem;
   font-size: 1.5rem;
+}
+
+.elite .member-info h3 {
+  color: var(--elite-gold);
 }
 
 .member-info p {
