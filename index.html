@@ -1,127 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Metallum Ultorum 24358</title>
-        <script src="js/template.js"></script>
+  <head>
+    <title>Metallum Ultorum 24358</title>
+    <script src="js/template.js"></script>
 
-        <!-- Open Graph -->
-        <meta property="og:type" content="website" />
-        <meta
-            property="og:url"
-            content="https://metallum-ultorum.github.io/members.html"
-        />
-        <meta property="og:title" content="Metallum Ultorum - FTC Team 24358" />
-        <meta
-            property="og:description"
-            content="Revolutionizing STEM Technology in Waukee, Iowa - FTC Robotics Team 24358"
-        />
-        <meta property="og:image" content="images/banner.jpg" />
-    </head>
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://metallum-ultorum.github.io/members.html"
+    />
+    <meta property="og:title" content="Metallum Ultorum - FTC Team 24358" />
+    <meta
+      property="og:description"
+      content="Revolutionizing STEM Technology in Waukee, Iowa - FTC Robotics Team 24358"
+    />
+    <meta property="og:image" content="images/banner.jpg" />
+  </head>
 
-    <body>
-        <div id="nav-placeholder"></div>
+  <body>
+    <div id="nav-placeholder"></div>
 
-        <header id="home" class="hero">
-            <div class="hero-content">
-                <h3>24358</h3>
-                <h3 class="name">Metallum Ultorum</h3>
-                <p>Revolutionizing STEM Technology in Waukee, Iowa</p>
-                <a href="#about" class="cta-button">Learn More</a>
-            </div>
-        </header>
+    <header id="home" class="hero">
+      <div class="hero-content">
+        <h3>24358</h3>
+        <h3 class="name">Metallum Ultorum</h3>
+        <p>Revolutionizing STEM Technology in Waukee, Iowa</p>
+        <a href="#about" class="cta-button">Learn More</a>
+      </div>
+    </header>
 
-        <section id="about" class="section">
-            <div class="container">
-                <h2>About Us</h2>
-                <p>
-                    We are <strong>Metallum Ultorum</strong>, an FTC Robotics
-                    team based out of <strong>Waukee, Iowa</strong>. We are both
-                    the Metallum Ultorum team and the Waukee Northwest Robotics
-                    Club, driven by the mission to revolutionize STEM technology
-                    and make it accessible to learners of all ages.
-                </p>
-            </div>
-        </section>
+    <section id="about" class="section">
+      <div class="container">
+        <h2>About Us</h2>
+        <p>
+          We are <strong>Metallum Ultorum</strong>, an FTC Robotics team based
+          out of <strong>Waukee, Iowa</strong>. We are both the Metallum Ultorum
+          team and the Waukee Northwest Robotics Club, driven by the mission to
+          revolutionize STEM technology and make it accessible to learners of
+          all ages.
+        </p>
+      </div>
+    </section>
 
-        <section id="achievements" class="section accent-bg">
-            <div class="container">
-                <h2>Achievements</h2>
-                <div class="achievement-card">
-                    <i class="fas fa-trophy"></i>
-                    <h3>2024 Pollock League Championship</h3>
-                    <p>2nd Place - Control (Programming) Award</p>
-                </div>
-            </div>
-        </section>
+    <section id="achievements" class="section accent-bg">
+      <div class="container">
+        <h2>Achievements</h2>
+        <div class="achievement-card">
+          <i class="fas fa-trophy"></i>
+          <h3>2024 Pollock League Championship</h3>
+          <p>2nd Place - Control (Programming) Award</p>
+        </div>
+      </div>
+    </section>
 
-        <section id="robots" class="section">
-            <div class="container">
-                <h2>Our Robots</h2>
-                <div class="robot-grid">
-                    <div class="robot-card">
-                        <h3>Outreach</h3>
-                        <p>
-                            Designed for community engagement and STEM
-                            demonstrations
-                        </p>
-                    </div>
-                    <div class="robot-card">
-                        <h3>IntoTheDeep</h3>
-                        <p>Our 2024-25 competition robot for FTC challenges</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <section id="robots" class="section">
+      <div class="container">
+        <h2>Our Robots</h2>
+        <div class="robot-grid">
+          <div class="robot-card">
+            <h3>Outreach</h3>
+            <p>Designed for community engagement and STEM demonstrations</p>
+          </div>
+          <div class="robot-card">
+            <h3>IntoTheDeep</h3>
+            <p>Our 2024-25 competition robot for FTC challenges</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <section id="contact" class="section accent-bg">
-            <div class="container">
-                <h2>Get Involved</h2>
-                <p>
-                    Interested in following our journey or contributing to our
-                    projects?
-                </p>
-                <a
-                    href="mailto:roboticswaukee@gmail.com"
-                    class="contact-button"
-                >
-                    <i class="fas fa-envelope"></i>
-                    Contact Us
-                </a>
-            </div>
-        </section>
+    <section id="contact" class="section accent-bg">
+      <div class="container">
+        <h2>Get Involved</h2>
+        <p>
+          Interested in following our journey or contributing to our projects?
+        </p>
+        <a href="mailto:roboticswaukee@gmail.com" class="contact-button">
+          <i class="fas fa-envelope"></i>
+          Contact Us
+        </a>
+      </div>
+    </section>
 
-        <div id="footer-placeholder"></div>
+    <div id="footer-placeholder"></div>
 
-        <!-- Page-specific script for section highlighting -->
-        <script>
-            document.addEventListener("DOMContentLoaded", function () {
-                const sections = document.querySelectorAll("section");
+    <!-- Page-specific script for section highlighting -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const scrollButton = document.getElementById("btn-back-to-top");
+        if (scrollButton) {
+          window.onscroll = function () {
+            if (
+              document.body.scrollTop > 20 ||
+              document.documentElement.scrollTop > 20
+            ) {
+              scrollButton.style.display = "block";
+            } else {
+              scrollButton.style.display = "none";
+            }
+          };
 
-                function setActiveLink() {
-                    let currentSection = "";
-                    sections.forEach((section) => {
-                        const sectionTop = section.offsetTop;
-                        const sectionHeight = section.clientHeight;
-                        if (window.scrollY >= sectionTop - sectionHeight / 3) {
-                            currentSection = section.id;
-                        }
-                    });
+          scrollButton.addEventListener("click", () => {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+          });
+        }
+        const sections = document.querySelectorAll("section");
 
-                    document.querySelectorAll(".nav-link").forEach((link) => {
-                        link.classList.remove("active-link");
-                    });
+        function setActiveLink() {
+          let currentSection = "";
+          sections.forEach((section) => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (window.scrollY >= sectionTop - sectionHeight / 3) {
+              currentSection = section.id;
+            }
+          });
 
-                    const activeLink = document.querySelector(
-                        `a[href="#${currentSection}"]`
-                    );
-                    if (activeLink) {
-                        activeLink.classList.add("active-link");
-                    }
-                }
+          document.querySelectorAll(".nav-link").forEach((link) => {
+            link.classList.remove("active-link");
+          });
 
-                window.addEventListener("scroll", setActiveLink);
-                setActiveLink();
-            });
-        </script>
-    </body>
+          const activeLink = document.querySelector(
+            `a[href="#${currentSection}"]`
+          );
+          if (activeLink) {
+            activeLink.classList.add("active-link");
+          }
+        }
+
+        window.addEventListener("scroll", setActiveLink);
+        setActiveLink();
+      });
+    </script>
+  </body>
 </html>

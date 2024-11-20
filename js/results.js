@@ -1,3 +1,23 @@
+document.addEventListener("DOMContentLoaded", function () {
+    const scrollButton = document.getElementById("btn-back-to-top");
+    if (scrollButton) {
+      window.onscroll = function () {
+        if (
+          document.body.scrollTop > 20 ||
+          document.documentElement.scrollTop > 20
+        ) {
+          scrollButton.style.display = "block";
+        } else {
+          scrollButton.style.display = "none";
+        }
+      };
+
+      scrollButton.addEventListener("click", () => {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      });
+    }
+})
 class MatchData {
     constructor(teamNumber) {
         this.teamNumber = teamNumber;
@@ -57,12 +77,12 @@ function renderMatches(rankings) {
         .map((team) => {
             return `
             <tr>
-                <td>${team.rank}</td>
-                <td class="${team.highlight ? "highlight" : ""}">${
+                <td style="color: white;">${team.rank}</td>
+                <td style="color: white;" class="${team.highlight ? "highlight" : ""}">${
                 team.team
             }</td>
-                <td>${team.record}</td>
-                <td>${team.matchesPlayed}</td>
+                <td style="color: white;">${team.record}</td>
+                <td style="color: white;">${team.matchesPlayed}</td>
                 <td>
                     <div class="stats-cell">
                         <span class="stats-value">${team.autoScore}</span>
