@@ -351,3 +351,18 @@ footer {
     padding: 0.5rem 1rem;
   }
 }
+
+/* Add font-face for Top Show */
+@font-face {
+  font-family: "Top Show";
+  src: url("path/to/Top Show.otf") format("opentype");
+}
+
+/* Apply the font to headers and titles */
+h1,
+h2,
+h3,
+.members-header h1,
+.members-header h2 {
+  font-family: "Top Show", sans-serif; /* Fallback to sans-serif */
+}
