@@ -98,6 +98,7 @@
     rgba(51, 51, 51, 1)
   );
   padding: 2rem;
+  height: 100%;
 }
 
 .member-info h3 {
