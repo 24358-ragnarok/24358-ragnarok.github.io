@@ -43,7 +43,7 @@ async function updateMatchData() {
         // Format the data
         const formattedData = {
             eventName: "Iowa League Rankings",
-            startDate: new Date().toISOString().split("T")[0], // Current date
+            startDate: "2024-09-01", // Start of the season
             venue: "Central Iowa League",
             rank: teamData.rank,
             totalTeams: data.rankings.length,
