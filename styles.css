@@ -413,6 +413,8 @@ h1,
 h2,
 h3,
 .members-header h1,
-.members-header h2 {
+.members-header h2,
+.members-header h3,
+.members-header h4 {
   font-family: "Top Show", sans-serif; /* Fallback to sans-serif */
 }
