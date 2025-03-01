@@ -1,6 +1,6 @@
 :root {
   --ultimate-red: #ff0000;
-  --elite-gold: #ffeb29;
+  --elite-gold: #ffffff;
   --gear-gray: #333333;
   --ash-black: #010101;
   --neon-red: #ff1f1f;
@@ -244,7 +244,6 @@ body {
 }
 
 .achievement-card i {
-  color: var(--elite-gold);
   font-size: 2rem;
   margin-bottom: 1rem;
 }
@@ -309,7 +308,7 @@ footer {
   }
   .hero-content .name {
     font-size: 1.4rem;
-    color: #ffeb29;
+    color: #ffffff;
   }
 }
 #btn-back-to-top {
@@ -414,6 +413,8 @@ h1,
 h2,
 h3,
 .members-header h1,
-.members-header h2 {
+.members-header h2,
+.members-header h3,
+.members-header h4 {
   font-family: "Top Show", sans-serif; /* Fallback to sans-serif */
 }
