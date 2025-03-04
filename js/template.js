@@ -37,7 +37,7 @@ const template = {
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
-                        ${["home", "about", "achievements", "robots", "contact"]
+                        ${["home", "achievements", "contact"]
                             .map(
                                 (section) => `
                             <li class="nav-item">
@@ -57,6 +57,9 @@ const template = {
                             .join("")}
                         <li class="nav-item">
                             <a class="nav-link" href="members.html">Members</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="into-the-deep.html">Into The Deep</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="results.html">Results</a>
