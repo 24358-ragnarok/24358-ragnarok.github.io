@@ -30,7 +30,7 @@ const template = {
             <div class="container-fluid">
                 <a class="navbar-brand" href="index.html">
                     <span class="team-number">24358</span>
-                    <span class="team-name">Metallum Ultorum</span>
+                    <span class="team-name">Ragnarok</span>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -70,7 +70,7 @@ const template = {
     footer: `
         <footer>
             <div class="container">
-                <p>&copy; 2024 Metallum Ultorum. All rights reserved.</p>
+                <p>&copy; 2025 Ragnarok. All rights reserved.</p>
                 <button type="button" class="btn btn-sm" id="btn-back-to-top">
                     <i class="fas fa-arrow-up"></i>
                 </button>
