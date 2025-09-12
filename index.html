@@ -196,7 +196,6 @@
 
             drawLoader();
 
-
             window.addEventListener("load", () => {
                 const loader = document.getElementById("loader");
                 loader.style.opacity = 0; // fade out
@@ -206,7 +205,7 @@
 
             document.querySelectorAll("a").forEach(link => {
             link.addEventListener("click", e => {
-                e.preventDefault();
+            e.preventDefault();
                 const href = link.href;
                 document.getElementById("loader").style.display = "flex";
                 document.body.classList.add("hidden");
