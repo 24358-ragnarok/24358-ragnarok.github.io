@@ -1,4 +1,5 @@
 {
-  "liveServer.settings.port": 24358,
-  "cSpell.words": ["Adarsh"]
+    "liveServer.settings.port": 24358,
+    "cSpell.words": ["Adarsh"],
+    "prettier.tabWidth": 4
 }

@@ -1,360 +1,315 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Our Journey - Ragnarok 24358</title>
+    <head>
+        <title>Our Journey - Ragnarok 24358</title>
 
-    <script src="js/template.js"></script>
+        <script src="js/template.js"></script>
 
-    <meta property="og:type" content="website" />
-    <meta
-      property="og:url"
-      content="https://metallum-ultorum.github.io/journey.html"
-    />
-    <meta property="og:title" content="Our Journey - Ragnarok" />
-    <meta
-      property="og:description"
-      content="Follow Ragnarok's journey in FTC competitions and community outreach."
-    />
-    <meta property="og:image" content="images/journey-banner.jpg" />
+        <meta property="og:type" content="website" />
+        <meta
+            property="og:url"
+            content="https://metallum-ultorum.github.io/journey.html"
+        />
+        <meta property="og:title" content="Our Journey - Ragnarok" />
+        <meta
+            property="og:description"
+            content="Follow Ragnarok's journey in FTC competitions and community outreach."
+        />
+        <meta property="og:image" content="images/journey-banner.jpg" />
 
-    <style>
-      /* New CSS for the timeline design */
-      .timeline {
-        position: relative;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 20px;
-      }
-
-      .timeline::after {
-        content: "";
-        position: absolute;
-        width: 6px;
-        background-color: #b30000; /* Solid red line */
-        top: 0;
-        bottom: 0;
-        left: 50%;
-        margin-left: -3px;
-        z-index: -1;
-      }
-
-      .timeline-container {
-        padding: 10px 40px;
-        position: relative;
-        background-color: inherit;
-        width: 50%;
-        opacity: 0; /* Add opacity for the fade-in animation */
-        transition: all 0.6s ease-in-out;
-      }
-
-      .timeline-container.show {
-        opacity: 1; /* Class to make it visible */
-      }
-
-      .timeline-container.left {
-        left: 0;
-        transform: translateX(-100px); /* Initial position for the slide-in */
-      }
-
-      .timeline-container.right {
-        left: 50%;
-        transform: translateX(100px); /* Initial position for the slide-in */
-      }
-
-      .timeline-container.show.left {
-        transform: translateX(0);
-      }
-
-      .timeline-container.show.right {
-        transform: translateX(0);
-      }
-
-      .timeline-container::after {
-        content: "";
-        position: absolute;
-        width: 25px;
-        height: 25px;
-        right: -14.5px; /* Adjusted from -17px */
-        background-color: #b30000; /* Solid red circle */
-        border: 4px solid #fff;
-        top: 15px;
-        border-radius: 50%;
-        z-index: 1;
-      }
-
-      .timeline-container.right::after {
-        left: -14.5px; /* Adjusted from -16px */
-      }
-
-      .timeline-content {
-        padding: 20px 30px;
-        background-color: #fff; /* Solid white background */
-        position: relative;
-        border-radius: 6px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      }
-
-      .timeline-content p {
-        color: #555;
-      }
-
-      .timeline-content h3 {
-        color: #b30000;
-      }
-
-      /* Back to Top Button */
-      #btn-back-to-top {
-        display: none;
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background-color: #b30000;
-        color: white;
-        border: none;
-        border-radius: 50%;
-        width: 50px;
-        height: 50px;
-        font-size: 24px;
-        cursor: pointer;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-      }
-
-      #btn-back-to-top:hover {
-        background-color: #7f0000;
-      }
-
-      /*FOUC prevention*/
-      #loader {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: black;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 9999;
-        opacity: 1;
-        transition: opacity 0.5s ease;
-      }
-      body.hidden {
-        overflow: hidden;
-      }
-
-      /* Media queries for a responsive timeline */
-      /* Media queries for a responsive timeline */
-      @media screen and (max-width: 600px) {
-        .timeline::after {
-          left: 31px;
-        }
-        .timeline-container {
-          width: 100%;
-          padding-left: 70px;
-          padding-right: 25px;
-          /* Remove the !important here */
-          transform: translateX(
-            -100px
-          ); /* Initial position for the fade-in and slide-in */
-        }
-        .timeline-container.right {
-          left: 0%;
-        }
-        .timeline-container.left::after,
-        .timeline-container.right::after {
-          left: 15px;
-          background-color: #b30000;
-        }
-        .timeline-content {
-          text-align: left;
-        }
-        /* This is the key change: Make the "show" state clear for both left and right */
-        .timeline-container.show {
-          transform: translateX(0);
-          opacity: 1;
-        }
-      }
-    </style>
-  </head>
-
-  <body>
-    <div id="loader">
-      <canvas id="loadingCanvas" width="100" height="100"></canvas>
-    </div>
-
-    <div id="nav-placeholder"></div>
-
-    <header class="hero">
-      <div class="hero-content">
-        <h3>Decode 2025-2026</h3>
-        <h3 class="name">Our Journey</h3>
-      </div>
-    </header>
-
-    <section id="journey" class="section">
-      <div class="container">
-        <h2>Our Robotics Journey</h2>
-        <p style="text-align: center">
-          This year, our journey is all about building a robot that can conquer
-          the Decode 2025-26 challenge. Follow our progress as we bring our
-          ideas to life!
-        </p>
-        <br />
-        <div class="timeline">
-          <div class="timeline-container left">
-            <div class="timeline-content">
-              <h3>Phase 1: Game Analysis & Strategy</h3>
-              <p>
-                We kicked off the season by diving deep into the game manual,
-                brainstorming different strategies, and sketching out initial
-                robot designs. This phase is all about defining our goals.
-              </p>
-            </div>
-          </div>
-          <div class="timeline-container right">
-            <div class="timeline-content">
-              <h3>Phase 2: Prototyping & Design</h3>
-              <p>
-                Our team is currently building and testing different mechanisms
-                to see what works best. We're using CAD software to finalize the
-                design before we start the full build.
-              </p>
-            </div>
-          </div>
-          <div class="timeline-container left">
-            <div class="timeline-content">
-              <h3>Phase 3: The Build Process</h3>
-              <p>
-                The construction is underway! We're assembling the chassis,
-                custom mechanisms, and integrating all the electronic
-                components. This is where our design truly starts to take shape.
-              </p>
-            </div>
-          </div>
-          <div class="timeline-container right">
-            <div class="timeline-content">
-              <h3>Phase 4: Programming & Tuning</h3>
-              <p>
-                As the hardware comes together, our programmers are writing the
-                code to make the robot move. We'll be focusing on autonomous
-                functions and driver-controlled precision.
-              </p>
-            </div>
-          </div>
-          <div class="timeline-container left">
-            <div class="timeline-content">
-              <h3>Phase 5: Competition & Iteration</h3>
-              <p>
-                The final step is to compete and learn from our experiences.
-                We'll be gathering data from our matches to make continuous
-                improvements to the robot and our strategy.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="section accent-bg">
-      <div class="container">
-        <h2>Stay Connected</h2>
-        <br />
-        <p>
-          Follow our progress and see how we innovate in the world of robotics!
-        </p>
-        <a href="mailto:roboticswaukee@gmail.com" class="contact-button">
-          <i class="fas fa-envelope"></i> Contact Us
-        </a>
-      </div>
-    </section>
-
-    <button id="btn-back-to-top">&#8593;</button>
-
-    <div id="footer-placeholder"></div>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const scrollButton = document.getElementById("btn-back-to-top");
-        const timelineContainers = document.querySelectorAll(
-          ".timeline-container"
-        );
-        const observerOptions = {
-          root: null,
-          rootMargin: "0px",
-          threshold: 0.2, // Adjust this value to control when the animation triggers
-        };
-
-        // Scroll event for the back-to-top button
-        window.onscroll = function () {
-          if (
-            document.body.scrollTop > 20 ||
-            document.documentElement.scrollTop > 20
-          ) {
-            scrollButton.style.display = "block";
-          } else {
-            scrollButton.style.display = "none";
-          }
-        };
-
-        // Smooth scroll to top
-        scrollButton.addEventListener("click", () => {
-          document.body.scrollTop = 0;
-          document.documentElement.scrollTop = 0;
-        });
-
-        // Intersection Observer for the timeline animations
-        // Use a new observer to handle both appearance and disappearance
-        const scrollObserver = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              // Add the "show" class when the element enters the viewport
-              entry.target.classList.add("show");
-            } else {
-              // Remove the "show" class when the element leaves the viewport
-              entry.target.classList.remove("show");
+        <style>
+            /* New CSS for the timeline design */
+            .timeline {
+                position: relative;
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 20px;
             }
-          });
-        }, observerOptions);
 
-        timelineContainers.forEach((container, index) => {
-          scrollObserver.observe(container);
-        });
-      });
+            .timeline::after {
+                content: "";
+                position: absolute;
+                width: 6px;
+                background-color: #b30000; /* Solid red line */
+                top: 0;
+                bottom: 0;
+                left: 50%;
+                margin-left: -3px;
+                z-index: -1;
+            }
 
-      // FOUC prevention
-      const canvas = document.getElementById("loadingCanvas");
-      const ctx = canvas.getContext("2d");
-      let angle = 0;
+            .timeline-container {
+                padding: 10px 40px;
+                position: relative;
+                background-color: inherit;
+                width: 50%;
+                opacity: 0; /* Add opacity for the fade-in animation */
+                transition: all 0.6s ease-in-out;
+            }
 
-      function drawLoader() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.beginPath();
-        ctx.arc(50, 50, 30, angle, angle + Math.PI / 1.5);
-        ctx.lineWidth = 6;
-        ctx.strokeStyle = "#b30000"; /* Use the same red for the loader */
-        ctx.stroke();
-        angle += 0.03; // Rotation speed
-        requestAnimationFrame(drawLoader);
-      }
+            .timeline-container.show {
+                opacity: 1; /* Class to make it visible */
+            }
 
-      drawLoader();
+            .timeline-container.left {
+                left: 0;
+                transform: translateX(
+                    -100px
+                ); /* Initial position for the slide-in */
+            }
 
-      window.addEventListener("load", () => {
-        const loader = document.getElementById("loader");
-        loader.style.opacity = 0;
-        setTimeout(() => (loader.style.display = "none"), 500);
-        document.body.classList.remove("hidden");
-      });
+            .timeline-container.right {
+                left: 50%;
+                transform: translateX(
+                    100px
+                ); /* Initial position for the slide-in */
+            }
 
-      document.querySelectorAll("a").forEach((link) => {
-        link.addEventListener("click", (e) => {
-          e.preventDefault();
-          const href = link.href;
-          document.getElementById("loader").style.display = "flex";
-          document.body.classList.add("hidden");
-          setTimeout(() => (window.location.href = href), 200);
-        });
-      });
-    </script>
-  </body>
+            .timeline-container.show.left {
+                transform: translateX(0);
+            }
+
+            .timeline-container.show.right {
+                transform: translateX(0);
+            }
+
+            .timeline-container::after {
+                content: "";
+                position: absolute;
+                width: 25px;
+                height: 25px;
+                right: -14.5px; /* Adjusted from -17px */
+                background-color: #b30000; /* Solid red circle */
+                border: 4px solid #fff;
+                top: 15px;
+                border-radius: 50%;
+                z-index: 1;
+            }
+
+            .timeline-container.right::after {
+                left: -14.5px; /* Adjusted from -16px */
+            }
+
+            .timeline-content {
+                padding: 20px 30px;
+                background-color: #fff; /* Solid white background */
+                position: relative;
+                border-radius: 6px;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            }
+
+            .timeline-content p {
+                color: #555;
+            }
+
+            .timeline-content h3 {
+                color: #b30000;
+            }
+
+            /* Back to Top Button */
+            #btn-back-to-top {
+                display: none;
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                background-color: #b30000;
+                color: white;
+                border: none;
+                border-radius: 50%;
+                width: 50px;
+                height: 50px;
+                font-size: 24px;
+                cursor: pointer;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            }
+
+            #btn-back-to-top:hover {
+                background-color: #7f0000;
+            }
+
+            /* Media queries for a responsive timeline */
+            /* Media queries for a responsive timeline */
+            @media screen and (max-width: 600px) {
+                .timeline::after {
+                    left: 31px;
+                }
+                .timeline-container {
+                    width: 100%;
+                    padding-left: 70px;
+                    padding-right: 25px;
+                    /* Remove the !important here */
+                    transform: translateX(
+                        -100px
+                    ); /* Initial position for the fade-in and slide-in */
+                }
+                .timeline-container.right {
+                    left: 0%;
+                }
+                .timeline-container.left::after,
+                .timeline-container.right::after {
+                    left: 15px;
+                    background-color: #b30000;
+                }
+                .timeline-content {
+                    text-align: left;
+                }
+                /* This is the key change: Make the "show" state clear for both left and right */
+                .timeline-container.show {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="nav-placeholder"></div>
+
+        <header class="hero">
+            <div class="hero-content">
+                <h3>Decode 2025-2026</h3>
+                <h3 class="name">Our Journey</h3>
+            </div>
+        </header>
+
+        <section id="journey" class="section">
+            <div class="container">
+                <h2>Our Robotics Journey</h2>
+                <p style="text-align: center">
+                    This year, our journey is all about building a robot that
+                    can conquer the Decode 2025-26 challenge. Follow our
+                    progress as we bring our ideas to life!
+                </p>
+                <br />
+                <div class="timeline">
+                    <div class="timeline-container left">
+                        <div class="timeline-content">
+                            <h3>Phase 1: Game Analysis & Strategy</h3>
+                            <p>
+                                We kicked off the season by diving deep into the
+                                game manual, brainstorming different strategies,
+                                and sketching out initial robot designs. This
+                                phase is all about defining our goals.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="timeline-container right">
+                        <div class="timeline-content">
+                            <h3>Phase 2: Prototyping & Design</h3>
+                            <p>
+                                Our team is currently building and testing
+                                different mechanisms to see what works best.
+                                We're using CAD software to finalize the design
+                                before we start the full build.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="timeline-container left">
+                        <div class="timeline-content">
+                            <h3>Phase 3: The Build Process</h3>
+                            <p>
+                                The construction is underway! We're assembling
+                                the chassis, custom mechanisms, and integrating
+                                all the electronic components. This is where our
+                                design truly starts to take shape.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="timeline-container right">
+                        <div class="timeline-content">
+                            <h3>Phase 4: Programming & Tuning</h3>
+                            <p>
+                                As the hardware comes together, our programmers
+                                are writing the code to make the robot move.
+                                We'll be focusing on autonomous functions and
+                                driver-controlled precision.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="timeline-container left">
+                        <div class="timeline-content">
+                            <h3>Phase 5: Competition & Iteration</h3>
+                            <p>
+                                The final step is to compete and learn from our
+                                experiences. We'll be gathering data from our
+                                matches to make continuous improvements to the
+                                robot and our strategy.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section accent-bg">
+            <div class="container">
+                <h2>Stay Connected</h2>
+                <br />
+                <p>
+                    Follow our progress and see how we innovate in the world of
+                    robotics!
+                </p>
+                <a
+                    href="mailto:roboticswaukee@gmail.com"
+                    class="contact-button"
+                >
+                    <i class="fas fa-envelope"></i> Contact Us
+                </a>
+            </div>
+        </section>
+
+        <button id="btn-back-to-top">&#8593;</button>
+
+        <div id="footer-placeholder"></div>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const scrollButton = document.getElementById("btn-back-to-top");
+                const timelineContainers = document.querySelectorAll(
+                    ".timeline-container"
+                );
+                const observerOptions = {
+                    root: null,
+                    rootMargin: "0px",
+                    threshold: 0.2, // Adjust this value to control when the animation triggers
+                };
+
+                // Scroll event for the back-to-top button
+                window.onscroll = function () {
+                    if (
+                        document.body.scrollTop > 20 ||
+                        document.documentElement.scrollTop > 20
+                    ) {
+                        scrollButton.style.display = "block";
+                    } else {
+                        scrollButton.style.display = "none";
+                    }
+                };
+
+                // Smooth scroll to top
+                scrollButton.addEventListener("click", () => {
+                    document.body.scrollTop = 0;
+                    document.documentElement.scrollTop = 0;
+                });
+
+                // Intersection Observer for the timeline animations
+                // Use a new observer to handle both appearance and disappearance
+                const scrollObserver = new IntersectionObserver((entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            // Add the "show" class when the element enters the viewport
+                            entry.target.classList.add("show");
+                        } else {
+                            // Remove the "show" class when the element leaves the viewport
+                            entry.target.classList.remove("show");
+                        }
+                    });
+                }, observerOptions);
+
+                timelineContainers.forEach((container, index) => {
+                    scrollObserver.observe(container);
+                });
+            });
+        </script>
+    </body>
 </html>
