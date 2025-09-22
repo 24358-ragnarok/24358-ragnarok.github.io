@@ -164,20 +164,16 @@
                         <div class="member-role current-role">
                             <span class="role-text">Head of Management</span>
                         </div>
-                        <div
-                            class="member-role historical-role"
-                            data-year="2023"
-                        >
+                        <div class="member-role historical-role" data-year="2023">
                             <span class="role-text">Engineer</span>
                         </div>
 
+
                         <!-- Added old roles \/-->
-                        <div
-                            class="member-role historical-role"
-                            data-year="2025"
-                        >
+                        <div class="member-role historical-role" data-year="2025">
                             <span class="role-text">Head of Management</span>
                         </div>
+
 
                         <!-- Added old roles /\-->
                     </div>
@@ -367,14 +363,10 @@
                             <span class="role-text">Mechanical Engineer</span>
 
                             <!-- Added old roles \/-->
-                            <div
-                                class="member-role historical-role"
-                                data-year="2025"
-                            >
-                                <span class="role-text"
-                                    >Mechanical Engineer</span
-                                >
+                            <div class="member-role historical-role" data-year="2025">
+                                <span class="role-text">Mechanical Engineer</span>
                             </div>
+
 
                             <!-- Added old roles /\-->
                         </div>
@@ -388,7 +380,7 @@
                                 2024
                             </div>
 
-                            <div class="year-trapezoid" data-year="2024">
+                            <div class="year-trapezoid" data-year="2025">
                                 2025
                             </div>
                             <div
@@ -436,7 +428,7 @@
                             <div class="year-trapezoid" data-year="2024">
                                 2024
                             </div>
-                            <div class="year-trapezoid" data-year="2023">
+                            <div class="year-trapezoid" data-year="2025">
                                 2025
                             </div>
                             <div
@@ -459,7 +451,7 @@
             </div>
             <div class="member-card">
                 <div class="member-image">
-                    <img src="images/Adarsh.jpg" alt="Adarsh Rajesh" />
+                    <img src="images/Adarsh.JPG" alt="Adarsh Rajesh" />
                     <div class="member-overlay">
                         <div class="member-role current-role">
                             <span class="role-text">Web Developer</span>
@@ -480,7 +472,7 @@
                             <div class="year-trapezoid" data-year="2024">
                                 2024
                             </div>
-                            <div class="year-trapezoid" data-year="2023">
+                            <div class="year-trapezoid" data-year="2025">
                                 2025
                             </div>
                             <div
@@ -636,6 +628,29 @@
         </div>
         <div id="footer-placeholder"></div>
         <script>
+
+            // FOUC Prevention
+
+            // Fade in on load
+            window.addEventListener("DOMContentLoaded", () => {
+                document.body.classList.add("fade-in");
+            });
+
+            // Fade out when leaving
+            document.querySelectorAll("a").forEach(link => {
+                link.addEventListener("click", e => {
+                // Only apply to internal links (skip external/new tab)
+                if (link.hostname === window.location.hostname && link.target !== "_blank") {
+                    e.preventDefault(); // stop default link behavior
+                    document.body.classList.add("fade-out");
+                    setTimeout(() => {
+                    window.location = link.href;
+                    }, 500); // match transition time
+                }
+                });
+            });
+
+            // FOUC Prevention
             document.addEventListener("DOMContentLoaded", function () {
                 const scrollButton = document.getElementById("btn-back-to-top");
                 if (scrollButton) {

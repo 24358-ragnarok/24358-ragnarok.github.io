@@ -700,3 +700,24 @@
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   }
 }
+
+/* FOUC Prevention \/*/
+/* Start hidden */
+body {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+/* When page is ready */
+body.fade-in {
+  opacity: 1;
+}
+
+/* Optional fade-out before leaving */
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+
+/* FOUC Prevention /\ */
