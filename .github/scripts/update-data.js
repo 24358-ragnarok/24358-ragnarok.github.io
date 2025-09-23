@@ -5,9 +5,9 @@ const path = require("path");
 async function updateMatchData() {
     const API_KEY = process.env.FTC_API_KEY;
     const TEAM_NUMBER = "24358";
-    const SEASON = "2024";
+    const SEASON = "2025";
     const LEAGUE = "USIA";
-    const REGION = "COR";
+    const REGION = "ACPS";
 
     try {
         const headers = {
@@ -43,8 +43,8 @@ async function updateMatchData() {
         // Format the data
         const formattedData = {
             eventName: "Iowa League Rankings",
-            startDate: "2024-09-01", // Start of the season
-            venue: "Central Iowa League",
+            startDate: "2025-09-01", // Start of the season
+            venue: "Acropolis League",
             rank: teamData.rank,
             totalTeams: data.rankings.length,
             wins: teamData.wins,
