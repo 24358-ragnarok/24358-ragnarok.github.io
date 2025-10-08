@@ -4,25 +4,30 @@ const path = require("path");
 
 async function updateMatchData() {
     const API_KEY = process.env.FTC_API_KEY;
+    const USERNAME = "bboonstra"; // FTC API username
     const TEAM_NUMBER = "24358";
     const SEASON = "2025";
-    const LEAGUE = "USIA";
-    const REGION = "COR";
+    const REGION = "USIA"; // regionCode
+    const LEAGUE = "ACPS"; // leagueCode
 
     try {
+        // Build proper Basic Auth header
+        const auth = Buffer.from(`${USERNAME}:${API_KEY}`).toString("base64");
+
         const headers = {
-            Authorization: `Basic ${API_KEY}`,
+            Authorization: `Basic ${auth}`,
             Accept: "application/json",
         };
 
+        // Correct rankings endpoint
         const response = await fetch(
-            `https://ftc-api.firstinspires.org/v2.0/${SEASON}/leagues/rankings/${LEAGUE}/${REGION}`,
+            `https://ftc-api.firstinspires.org/v2.0/${SEASON}/leagues/rankings/${REGION}/${LEAGUE}`,
             { headers }
         );
 
         if (!response.ok) {
             console.error(`Failed to fetch data: HTTP ${response.status}`);
-            console.error("Response headers:", response.headers);
+            console.error("Response headers:", response.headers.raw());
             const errorBody = await response.text();
             console.error("Response body:", errorBody);
             throw new Error(
@@ -43,8 +48,8 @@ async function updateMatchData() {
         // Format the data
         const formattedData = {
             eventName: "Iowa League Rankings",
-            startDate: "2024-09-01", // Start of the season
-            venue: "Central Iowa League",
+            startDate: "2025-09-01", // placeholder
+            venue: "Acropolis League",
             rank: teamData.rank,
             totalTeams: data.rankings.length,
             wins: teamData.wins,
