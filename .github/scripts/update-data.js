@@ -5,7 +5,7 @@ const path = require("path");
 async function updateMatchData() {
     const API_KEY = process.env.FTC_API_KEY;
     const TEAM_NUMBER = "24358";
-    const SEASON = "2024";
+    const SEASON = "2025";
     const LEAGUE = "USIA";
     const REGION = "COR";
 
