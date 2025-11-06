@@ -1,0 +1,8 @@
+# Security Policy for Ragnarok FTC Team 24358
+# https://ragnarokftc.com
+
+Contact: mailto:roboticswaukee@gmail.com
+Expires: 2026-12-31T23:59:59.000Z
+Preferred-Languages: en
+Canonical: https://ragnarokftc.com/.well-known/security.txt
+

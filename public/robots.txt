@@ -1,0 +1,20 @@
+# robots.txt for Ragnarok FTC Team 24358
+# https://ragnarokftc.com
+
+User-agent: *
+Allow: /
+
+# Disallow API routes from being indexed
+Disallow: /api/
+
+# Allow all other pages
+Allow: /members
+Allow: /results
+Allow: /seasons
+
+# Sitemap location
+Sitemap: https://ragnarokftc.com/sitemap.xml
+
+# Crawl delay (optional, helps prevent server overload)
+Crawl-delay: 1
+

@@ -1,0 +1,44 @@
+{
+    "name": "Ragnarok FTC Team 24358",
+    "short_name": "Ragnarok FTC",
+    "description": "Revolutionizing STEM Technology in Waukee, Iowa - FTC Robotics Team 24358",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#010101",
+    "theme_color": "#ff0000",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "/images/icons/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/images/icons/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/images/icons/apple-touch-icon.png",
+            "sizes": "180x180",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/icons/favicon-16x16.png",
+            "sizes": "16x16",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/icons/favicon-32x32.png",
+            "sizes": "32x32",
+            "type": "image/png"
+        }
+    ],
+    "categories": ["education", "robotics", "stem"],
+    "lang": "en-US",
+    "dir": "ltr",
+    "scope": "/",
+    "prefer_related_applications": false
+}
