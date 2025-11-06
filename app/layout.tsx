@@ -5,6 +5,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import DynamicScrollbar from "@/components/DynamicScrollbar";
 import StructuredData from "@/components/StructuredData";
+import { Analytics } from "@vercel/analytics/react";
 
 const bodyFont = Inter({ subsets: ["latin"], variable: "--font-body" });
 const displayFont = Space_Grotesk({
@@ -161,6 +162,7 @@ export default function RootLayout({
                     {children}
                 </main>
                 <Footer />
+                <Analytics />
             </body>
         </html>
     );
