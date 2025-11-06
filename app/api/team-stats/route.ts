@@ -15,8 +15,17 @@ export async function GET() {
 
         if (!stats) {
             return NextResponse.json(
-                { error: "Team not found in rankings" },
-                { status: 404 }
+                {
+                    error: "Team stats not available",
+                    available: false,
+                },
+                {
+                    status: 404,
+                    headers: {
+                        "Cache-Control":
+                            "public, s-maxage=300, stale-while-revalidate=600",
+                    },
+                }
             );
         }
 
@@ -32,6 +41,7 @@ export async function GET() {
         return NextResponse.json(
             {
                 error: "Failed to fetch team stats",
+                available: false,
                 message:
                     error instanceof Error ? error.message : "Unknown error",
             },

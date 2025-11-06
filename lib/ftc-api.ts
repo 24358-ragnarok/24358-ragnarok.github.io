@@ -48,12 +48,10 @@ function getAuthHeader(): string {
     const apiKey = process.env.FTC_API_KEY; // This is the AuthorizationKey
 
     if (!apiKey) {
-        // During build time, return a placeholder if API key isn't set
-        if (process.env.NODE_ENV === "production" && !process.env.VERCEL) {
-            console.warn("FTC_API_KEY not set during build");
-            return "Basic placeholder";
-        }
-        throw new Error("FTC_API_KEY environment variable is not set");
+        console.warn(
+            "FTC_API_KEY environment variable is not set - using placeholder"
+        );
+        return "Basic placeholder";
     }
 
     // Create token by Base64 encoding "username:AuthorizationKey"
@@ -78,9 +76,11 @@ async function fetchRankingsFromAPI(): Promise<MatchResults> {
 
     if (!response.ok) {
         const errorText = await response.text();
-        throw new Error(
+        console.warn(
             `FTC API error: ${response.status} ${response.statusText} - ${errorText}`
         );
+        // Throw error to be caught by getRankings and return null
+        throw new Error(`API request failed: ${response.status}`);
     }
 
     const data = (await response.json()) as FTCRankingsResponse;
@@ -124,25 +124,40 @@ async function fetchRankingsFromAPI(): Promise<MatchResults> {
 /**
  * Get rankings with caching
  * This is the main function to use in API routes
+ * Returns null if no data is available (API error, empty rankings, etc.)
  */
-export async function getRankings(): Promise<MatchResults> {
+export async function getRankings(): Promise<MatchResults | null> {
     const cacheKey = "ftc-rankings";
 
     // Try to get from cache first
     const cached = getFromCache<MatchResults>(cacheKey);
     if (cached) {
-        console.log("Returning cached rankings");
-        return cached;
+        // Only return cached data if it has actual rankings
+        if (cached.rankings && cached.rankings.length > 0) {
+            console.log("Returning cached rankings");
+            return cached;
+        }
     }
 
     // Fetch from API
-    console.log("Fetching fresh rankings from FTC API");
-    const data = await fetchRankingsFromAPI();
+    try {
+        console.log("Fetching fresh rankings from FTC API");
+        const data = await fetchRankingsFromAPI();
 
-    // Store in cache
-    setInCache(cacheKey, data);
+        // Only return data if we have actual rankings
+        if (data.rankings && data.rankings.length > 0) {
+            // Store in cache
+            setInCache(cacheKey, data);
+            return data;
+        }
 
-    return data;
+        // No valid data available
+        console.warn("No rankings data available");
+        return null;
+    } catch (error) {
+        console.warn("Failed to fetch rankings:", error);
+        return null;
+    }
 }
 
 /**
@@ -150,6 +165,11 @@ export async function getRankings(): Promise<MatchResults> {
  */
 export async function getTeamStats() {
     const rankings = await getRankings();
+
+    if (!rankings) {
+        return null;
+    }
+
     const teamRanking = rankings.rankings.find(
         (team) => team.teamNumber === TEAM_NUMBER
     );

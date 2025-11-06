@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { seasons } from "@/data/seasons";
 
 export default function Navigation() {
     const [isOpen, setIsOpen] = useState(false);
@@ -11,6 +12,32 @@ export default function Navigation() {
     const [pastHero, setPastHero] = useState(false);
     const pathname = usePathname();
     const isHomepage = pathname === "/";
+
+    // Handle scroll restoration on route changes
+    useEffect(() => {
+        // Scroll to top when pathname changes
+        // Use multiple methods to ensure it works reliably
+        const scrollToTop = () => {
+            window.scrollTo(0, 0);
+            document.documentElement.scrollTop = 0;
+            document.body.scrollTop = 0;
+        };
+
+        // Immediate scroll
+        scrollToTop();
+
+        // Also scroll after render completes
+        requestAnimationFrame(() => {
+            scrollToTop();
+        });
+
+        // And after a tiny delay to catch any late renders
+        const timeoutId = setTimeout(() => {
+            scrollToTop();
+        }, 0);
+
+        return () => clearTimeout(timeoutId);
+    }, [pathname]);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -73,10 +100,11 @@ export default function Navigation() {
         { href: "#seasons", label: "Seasons", isDropdown: true },
     ];
 
-    const seasonLinks = [
-        { href: "/seasons/decode", label: "Decode" },
-        { href: "/seasons/into-the-deep", label: "Into The Deep" },
-    ];
+    // Dynamically generate season links from seasons data
+    const seasonLinks = seasons.map((season) => ({
+        href: `/seasons/${season.slug}`,
+        label: season.name,
+    }));
 
     return (
         <nav
@@ -146,7 +174,7 @@ export default function Navigation() {
                                             />
                                         </svg>
                                     </button>
-                                    <div className="absolute top-full left-0 mt-2 w-52 bg-[#0a0a0a] border border-ultimate-red/30 rounded-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 shadow-2xl overflow-hidden backdrop-blur-md">
+                                    <div className="absolute top-full right-0 mt-2 w-52 bg-[#0a0a0a] border border-ultimate-red/30 rounded-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 shadow-2xl overflow-hidden backdrop-blur-md">
                                         {seasonLinks.map((season) => (
                                             <Link
                                                 key={season.href}

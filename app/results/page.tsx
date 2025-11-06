@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import RankingsTable from "@/components/RankingsTable";
-import LoadingSpinner from "@/components/LoadingSpinner";
+import ResultsComingSoon from "@/components/ResultsComingSoon";
 import { getRankings } from "@/lib/ftc-api";
 
 export const metadata: Metadata = {
@@ -12,21 +12,7 @@ export const revalidate = 300; // Revalidate every 5 minutes
 export const dynamic = "force-dynamic";
 
 export default async function ResultsPage() {
-    let rankings = null;
-    let error = null;
-
-    try {
-        const data = await getRankings();
-        rankings = data;
-    } catch (e) {
-        error = e instanceof Error ? e.message : "Failed to fetch rankings";
-        console.error("Error loading rankings:", e);
-        // Don't fail the build if API key is missing during build time
-        if (error.includes("FTC_API_KEY")) {
-            error =
-                "API key not configured. Set FTC_API_KEY environment variable.";
-        }
-    }
+    const rankings = await getRankings();
 
     return (
         <>
@@ -142,42 +128,31 @@ export default async function ResultsPage() {
                 </section>
             )}
 
-            {/* Rankings Table */}
-            <section className="py-10 md:py-12 pb-16 relative">
-                <div className="container-custom">
-                    <div className="card glow-border">
-                        <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 font-display">
-                            League Rankings
-                        </h2>
+            {/* Rankings Table or Coming Soon */}
+            {rankings ? (
+                <section className="py-10 md:py-12 pb-16 relative">
+                    <div className="container-custom">
+                        <div className="card glow-border">
+                            <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 font-display">
+                                League Rankings
+                            </h2>
 
-                        {error && (
-                            <div className="bg-ultimate-red/10 border-2 border-ultimate-red/40 rounded-xl p-8 text-center">
-                                <p className="text-white font-semibold mb-2 text-lg">
-                                    Rankings are not yet available for this
-                                    season! Check back soon!
-                                </p>
-                            </div>
-                        )}
-
-                        {!rankings && !error && (
-                            <LoadingSpinner message="Loading rankings..." />
-                        )}
-
-                        {rankings && (
                             <RankingsTable rankings={rankings.rankings} />
-                        )}
 
-                        {rankings?.lastUpdated && (
-                            <p className="text-gray-500 text-xs text-center mt-8 pt-6 border-t border-ultimate-red/20">
-                                Last updated:{" "}
-                                {new Date(
-                                    rankings.lastUpdated
-                                ).toLocaleString()}
-                            </p>
-                        )}
+                            {rankings.lastUpdated && (
+                                <p className="text-gray-500 text-xs text-center mt-8 pt-6 border-t border-ultimate-red/20">
+                                    Last updated:{" "}
+                                    {new Date(
+                                        rankings.lastUpdated
+                                    ).toLocaleString()}
+                                </p>
+                            )}
+                        </div>
                     </div>
-                </div>
-            </section>
+                </section>
+            ) : (
+                <ResultsComingSoon />
+            )}
         </>
     );
 }

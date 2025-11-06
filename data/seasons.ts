@@ -93,16 +93,16 @@ export const seasons: Season[] = [
     },
     {
         id: "centerstage-2023",
-        name: "CENTERSTAGE",
+        name: "Centerstage",
         year: "2023-2024",
         slug: "centerstage",
         description:
-            "Our debut season featured the CENTERSTAGE challenge, where we took our first leap into designing, building, and coding a competitive FTC robot.",
+            "Our debut season featured the Centerstage challenge, where we took our first leap into designing, building, and coding a competitive FTC robot.",
         phases: [
             {
                 title: "Phase 1: Brainstorming & Learning",
                 description:
-                    "We started by studying the CENTERSTAGE challenge, brainstorming strategies, and learning about the core game elements. This phase set the foundation for our ambitious rookie build.",
+                    "We started by studying the Centerstage challenge, brainstorming strategies, and learning about the core game elements. This phase set the foundation for our ambitious rookie build.",
             },
             {
                 title: "Phase 2: Building the Robot",
@@ -128,9 +128,9 @@ export const seasons: Season[] = [
         gallery: [
             {
                 image: "/images/seasons/centerstage-field.jpg",
-                title: "CENTERSTAGE Field Day",
+                title: "Centerstage Field Day",
                 description:
-                    "Testing our robot on the official CENTERSTAGE field for the first time, a big moment for our rookie team.",
+                    "Testing our robot on the official Centerstage field for the first time, a big moment for our rookie team.",
             },
             {
                 image: "/images/seasons/centerstage-robot.jpg",
