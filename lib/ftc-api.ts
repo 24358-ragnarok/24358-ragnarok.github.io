@@ -79,8 +79,6 @@ async function fetchRankingsFromAPI(): Promise<MatchResults> {
         console.warn(
             `FTC API error: ${response.status} ${response.statusText} - ${errorText}`
         );
-        // Throw error to be caught by getRankings and return null
-        throw new Error(`API request failed: ${response.status}`);
     }
 
     const data = (await response.json()) as FTCRankingsResponse;
