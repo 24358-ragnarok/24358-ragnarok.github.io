@@ -3,9 +3,5 @@
     "buildCommand": "next build",
     "devCommand": "next dev",
     "installCommand": "npm install",
-    "regions": ["iad1"],
-    "env": {
-        "FTC_API_USERNAME": "@ftc_api_username",
-        "FTC_API_KEY": "@ftc_api_key"
-    }
+    "regions": ["iad1"]
 }

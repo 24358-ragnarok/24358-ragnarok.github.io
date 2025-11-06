@@ -235,11 +235,11 @@ body.scrollbar-visible ::-webkit-scrollbar-thumb {
 }
 
 .trophy-silver {
-  color: rgba(255, 255, 255, 0.65);
+  color: var(--gear-gray);
 }
 
 .trophy-bronze {
-  color: #d17c2f;
+  color: var(--ash-black);
 }
 
 .loading-spinner {

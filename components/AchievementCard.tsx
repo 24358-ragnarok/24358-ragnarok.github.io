@@ -1,4 +1,5 @@
 import { Achievement } from "@/lib/types";
+import { Trophy } from "lucide-react";
 
 interface AchievementCardProps {
     achievement: Achievement;
@@ -7,13 +8,7 @@ interface AchievementCardProps {
 
 export default function AchievementCard({ achievement }: AchievementCardProps) {
     const getTrophyIcon = () => {
-        if (achievement.icon === "gold") {
-            return "🏆";
-        } else if (achievement.icon === "silver") {
-            return "🥈";
-        } else {
-            return "🥉";
-        }
+        return <Trophy className="w-full h-full" strokeWidth={1.5} />;
     };
 
     const getTrophyColor = () => {
@@ -38,7 +33,9 @@ export default function AchievementCard({ achievement }: AchievementCardProps) {
 
     return (
         <div className={`card text-center glow-border ${getBorderColor()}`}>
-            <div className={`text-5xl md:text-6xl mb-5 md:mb-6 ${getTrophyColor()}`}>
+            <div
+                className={`w-20 h-20 md:w-24 md:h-24 mb-5 md:mb-6 mx-auto ${getTrophyColor()}`}
+            >
                 {getTrophyIcon()}
             </div>
             <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4 font-display">
@@ -47,7 +44,9 @@ export default function AchievementCard({ achievement }: AchievementCardProps) {
             <p className="text-ultimate-red font-bold mb-2 md:mb-3 text-base md:text-lg">
                 {achievement.place}
             </p>
-            <p className="text-gray-300 text-sm md:text-base leading-relaxed">{achievement.award}</p>
+            <p className="text-gray-300 text-sm md:text-base leading-relaxed">
+                {achievement.award}
+            </p>
         </div>
     );
 }
