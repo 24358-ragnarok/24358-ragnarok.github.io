@@ -139,7 +139,7 @@ export const members: Member[] = [
         id: "eli-wilhelm",
         name: "Eli Wilhelm",
         role: "Builder",
-        image: "/images/members/eli.jpg",
+        image: "/images/members/eli.png",
         bio: "Hi, I'm Eli! I'm a rookie and one of the builders on the team. I love bringing ideas to life through building, and I'm excited to learn, create, and contribute to the team!",
         years: [2025],
     },
