@@ -114,7 +114,7 @@ export const members: Member[] = [
         id: "adarsh-rajesh",
         name: "Adarsh Rajesh",
         role: "Web Developer",
-        image: "/images/members/adarsh.jpg",
+        image: "/images/members/Adarsh.jpg",
         bio: "Hi, I'm Adarsh! I've been part of FTC for 2 years. I've programmed in HTML, CSS, JavaScript, and Python, and I love building projects, solving problems, and learning new skills to help the team succeed!",
         years: [2024, 2025],
         historicalRoles: [{ year: 2024, role: "Web Developer" }],
