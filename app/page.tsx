@@ -6,6 +6,7 @@ import { teamInfo } from "@/data/team-info";
 import { seasons } from "@/data/seasons";
 import AchievementCard from "@/components/AchievementCard";
 import ScrollDownIndicator from "@/components/ScrollDownIndicator";
+import Livestream from "@/components/Livestream";
 
 export default function Home() {
     return (
@@ -103,6 +104,13 @@ export default function Home() {
                     </div>
                 </div>
                 <ScrollDownIndicator />
+            </section>
+
+            {/* Livestream Section */}
+            <section className="py-12 md:py-16 relative">
+                <div className="container-custom">
+                    <Livestream videoId="hMO7b_FGIgg" />
+                </div>
             </section>
 
             {/* About Section */}
