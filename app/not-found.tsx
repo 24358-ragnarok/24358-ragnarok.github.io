@@ -4,7 +4,7 @@ export default function NotFound() {
     return (
         <div className="min-h-screen flex items-center justify-center bg-ash-black">
             <div className="text-center">
-                <h1 className="text-9xl font-bold text-ultimate-red mb-4">
+                <h1 className="text-9xl font-top-show text-ultimate-red mb-4">
                     404
                 </h1>
                 <h2 className="text-4xl font-bold text-white mb-6">
@@ -16,7 +16,7 @@ export default function NotFound() {
                 </p>
                 <Link
                     href="/"
-                    className="inline-block px-8 py-4 bg-ultimate-red hover:bg-ultimate-red-strong text-white font-semibold rounded-lg transition-all duration-300"
+                    className="inline-block px-8 py-4 bg-ultimate-red hover:bg-ultimate-red-strong text-white font-semibold rounded-lg border border-white transition-all duration-300"
                 >
                     Go Home
                 </Link>

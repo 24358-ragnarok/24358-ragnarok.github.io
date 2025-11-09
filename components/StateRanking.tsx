@@ -21,7 +21,7 @@ export default function StateRanking({
                 </h2>
                 {lastUpdated && (
                     <div className="text-xs text-gray-500">
-                        Last updated:{" "}
+                        Since{" "}
                         {new Date(lastUpdated).toLocaleString("en-US", {
                             month: "short",
                             day: "numeric",

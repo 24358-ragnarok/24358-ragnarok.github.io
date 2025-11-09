@@ -2,11 +2,11 @@
  * FTCScout GraphQL API Integration
  *
  * Fetches team data from FTCScout's GraphQL API
- * with intelligent caching based on day of week.
+ * with intelligent caching using Next.js native caching.
  */
 
+import { unstable_cache } from "next/cache";
 import { FTCScoutTeamData, MatchResults, Achievement, Award } from "./types";
-import { getFromCache, setInCache } from "./cache";
 
 const GRAPHQL_URL = "https://api.ftcscout.org/graphql";
 const TEAM_NUMBER = 24358;
@@ -236,32 +236,24 @@ export function transformAwards(awards: Award[]): Achievement[] {
 }
 
 /**
- * Get team achievements (awards)
+ * Get team achievements (awards) with Next.js caching
  */
-export async function getAchievements(): Promise<Achievement[]> {
-    const cacheKey = "ftc-achievements";
+export const getAchievements = unstable_cache(
+    async (): Promise<Achievement[]> => {
+        const data = await fetchFromFTCScout();
+        if (!data || !data.awards) {
+            console.warn("No awards data available");
+            return [];
+        }
 
-    // Try cache first
-    const cached = getFromCache<Achievement[]>(cacheKey);
-    if (cached) {
-        console.log("Returning cached achievements");
-        return cached;
+        return transformAwards(data.awards);
+    },
+    ["ftc-achievements"],
+    {
+        revalidate: getCacheTTL(),
+        tags: ["ftc-achievements"],
     }
-
-    // Fetch from API
-    const data = await fetchFromFTCScout();
-    if (!data || !data.awards) {
-        console.warn("No awards data available");
-        return [];
-    }
-
-    const achievements = transformAwards(data.awards);
-
-    // Cache with intelligent TTL
-    setInCache(cacheKey, achievements, getCacheTTL());
-
-    return achievements;
-}
+);
 
 /**
  * Calculate team statistics from matches
@@ -335,133 +327,140 @@ function getCurrentEvent(
 }
 
 /**
- * Get rankings with caching (main function for compatibility)
+ * Get rankings with Next.js caching
  */
-export async function getRankings(): Promise<MatchResults | null> {
-    const cacheKey = "ftc-rankings";
+export const getRankings = unstable_cache(
+    async (): Promise<MatchResults | null> => {
+        const data = await fetchFromFTCScout();
+        if (!data) {
+            console.warn("No data available from FTCScout");
+            return null;
+        }
 
-    // Try cache first
-    const cached = getFromCache<MatchResults>(cacheKey);
-    if (cached) {
-        console.log("Returning cached rankings");
-        return cached;
-    }
+        // Calculate stats
+        const stats = calculateMatchStats(data.matches);
+        const eventStats = data.events;
+        const currentEvent = getCurrentEvent(data.matches, eventStats);
 
-    // Fetch from API
-    const data = await fetchFromFTCScout();
-    if (!data) {
-        console.warn("No data available from FTCScout");
-        return null;
-    }
+        // Attach stats to all matches based on event name
+        const matchesWithStats = data.matches.map((match) => {
+            const eventStat = eventStats?.find(
+                (e) => e.event.name === match.event.name
+            )?.stats;
+            return {
+                ...match,
+                event: {
+                    ...match.event,
+                    stats: eventStat,
+                },
+            };
+        });
 
-    // Calculate stats
-    const stats = calculateMatchStats(data.matches);
-    const eventStats = data.events;
-    const currentEvent = getCurrentEvent(data.matches, eventStats);
+        // Get recent matches for the current/latest event
+        const recentMatches = currentEvent
+            ? matchesWithStats
+                  .filter(
+                      (m) =>
+                          m.event.name === currentEvent.name &&
+                          m.match.hasBeenPlayed
+                  )
+                  .sort((a, b) => b.match.matchNum - a.match.matchNum)
+                  .slice(0, 100) // All matches for the season
+            : [];
 
-    // Attach stats to all matches based on event name
-    const matchesWithStats = data.matches.map((match) => {
-        const eventStat = eventStats?.find(
-            (e) => e.event.name === match.event.name
-        )?.stats;
-        return {
-            ...match,
-            event: {
-                ...match.event,
-                stats: eventStat,
+        // Create a simplified rankings array (just our team for now)
+        const rankings = [
+            {
+                rank: data.quickStats.tot.rank,
+                teamNumber: TEAM_NUMBER.toString(),
+                teamName: "Ragnarok",
+                record: `${stats.wins}-${stats.losses}-${stats.ties}`,
+                matchesPlayed: stats.matchesPlayed,
+                autoScore: 0,
+                driverScore: 0,
+                endScore: 0,
+                totalPoints: 0,
             },
-        };
-    });
+        ];
 
-    // Get recent matches for the current/latest event
-    const recentMatches = currentEvent
-        ? matchesWithStats
-              .filter(
-                  (m) =>
-                      m.event.name === currentEvent.name &&
-                      m.match.hasBeenPlayed
-              )
-              .sort((a, b) => b.match.matchNum - a.match.matchNum)
-              .slice(0, 100) // All matches for the season
-        : [];
-
-    // Create a simplified rankings array (just our team for now)
-    // In a real scenario, you'd fetch all teams in the league
-    const rankings = [
-        {
+        const result: MatchResults = {
+            eventName: currentEvent?.name || "Current Season",
+            startDate:
+                currentEvent?.start || new Date().toISOString().split("T")[0],
+            venue: "Iowa League",
             rank: data.quickStats.tot.rank,
-            teamNumber: TEAM_NUMBER.toString(),
-            teamName: "Ragnarok",
+            totalTeams: 0,
+            wins: stats.wins,
+            losses: stats.losses,
+            ties: stats.ties,
+            rankings,
+            lastUpdated: currentEvent?.updatedAt || new Date().toISOString(),
+            currentEvent,
+            recentMatches,
+        };
+
+        return result;
+    },
+    ["ftc-rankings"],
+    {
+        revalidate: getCacheTTL(),
+        tags: ["ftc-rankings"],
+    }
+);
+
+/**
+ * Get team-specific statistics with Next.js caching
+ */
+export const getTeamStats = unstable_cache(
+    async () => {
+        const data = await fetchFromFTCScout();
+
+        if (!data) {
+            return null;
+        }
+
+        const stats = calculateMatchStats(data.matches);
+
+        return {
+            rank: data.quickStats.tot.rank,
+            totalTeams: 0,
             record: `${stats.wins}-${stats.losses}-${stats.ties}`,
+            wins: stats.wins,
+            losses: stats.losses,
+            ties: stats.ties,
+            avgAuto: 0,
+            avgTeleOp: 0,
+            avgEndgame: 0,
+            totalPoints: 0,
             matchesPlayed: stats.matchesPlayed,
-            autoScore: 0, // Would need to calculate from match details
-            driverScore: 0, // Would need to calculate from match details
-            endScore: 0, // Would need to calculate from match details
-            totalPoints: 0, // Would need to calculate average
-        },
-    ];
-
-    const result: MatchResults = {
-        eventName: currentEvent?.name || "Current Season",
-        startDate:
-            currentEvent?.start || new Date().toISOString().split("T")[0],
-        venue: "Iowa League",
-        rank: data.quickStats.tot.rank,
-        totalTeams: 0, // Would need league-wide data
-        wins: stats.wins,
-        losses: stats.losses,
-        ties: stats.ties,
-        rankings,
-        lastUpdated: new Date().toISOString(),
-        currentEvent,
-        recentMatches,
-    };
-
-    // Cache with intelligent TTL
-    setInCache(cacheKey, result, getCacheTTL());
-
-    return result;
-}
+            autoRank: data.quickStats.auto.rank,
+            dcRank: data.quickStats.dc.rank,
+        };
+    },
+    ["ftc-team-stats"],
+    {
+        revalidate: getCacheTTL(),
+        tags: ["ftc-team-stats"],
+    }
+);
 
 /**
- * Get team-specific statistics
+ * Get live stream URL if there's an ongoing event with Next.js caching
  */
-export async function getTeamStats() {
-    const data = await fetchFromFTCScout();
+export const getLiveStreamURL = unstable_cache(
+    async (): Promise<string | null> => {
+        const data = await fetchFromFTCScout();
 
-    if (!data) {
-        return null;
+        if (!data || !data.matches) {
+            return null;
+        }
+
+        const ongoingEvent = data.matches.find((m) => m.event.ongoing)?.event;
+        return ongoingEvent?.liveStreamURL || null;
+    },
+    ["ftc-livestream"],
+    {
+        revalidate: 60, // Check every minute for live streams
+        tags: ["ftc-livestream"],
     }
-
-    const stats = calculateMatchStats(data.matches);
-
-    return {
-        rank: data.quickStats.tot.rank,
-        totalTeams: 0, // Would need league-wide data
-        record: `${stats.wins}-${stats.losses}-${stats.ties}`,
-        wins: stats.wins,
-        losses: stats.losses,
-        ties: stats.ties,
-        avgAuto: 0, // Would calculate from match details
-        avgTeleOp: 0, // Would calculate from match details
-        avgEndgame: 0, // Would calculate from match details
-        totalPoints: 0, // Would calculate average
-        matchesPlayed: stats.matchesPlayed,
-        autoRank: data.quickStats.auto.rank,
-        dcRank: data.quickStats.dc.rank,
-    };
-}
-
-/**
- * Get live stream URL if there's an ongoing event
- */
-export async function getLiveStreamURL(): Promise<string | null> {
-    const data = await fetchFromFTCScout();
-
-    if (!data || !data.matches) {
-        return null;
-    }
-
-    const ongoingEvent = data.matches.find((m) => m.event.ongoing)?.event;
-    return ongoingEvent?.liveStreamURL || null;
-}
+);

@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { seasons } from "@/data/seasons";
+import { MenuIcon, CloseIcon, ChevronDownIcon } from "./Icons";
 
 export default function Navigation() {
     const [isOpen, setIsOpen] = useState(false);
@@ -159,21 +160,14 @@ export default function Navigation() {
                                                 ? "text-lg"
                                                 : "text-sm"
                                         }`}
+                                        aria-expanded="false"
+                                        aria-label="Open seasons menu"
                                     >
                                         {link.label}
-                                        <svg
+                                        <ChevronDownIcon
                                             className="w-3 h-3"
-                                            fill="none"
-                                            stroke="currentColor"
-                                            viewBox="0 0 24 24"
-                                        >
-                                            <path
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                                strokeWidth={2}
-                                                d="M19 9l-7 7-7-7"
-                                            />
-                                        </svg>
+                                            aria-hidden={true}
+                                        />
                                     </button>
                                     <div className="absolute top-full right-0 mt-2 w-52 bg-[#0a0a0a] border border-ultimate-red/30 rounded-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 shadow-2xl overflow-hidden backdrop-blur-md">
                                         {seasonLinks.map((season) => (
@@ -218,23 +212,10 @@ export default function Navigation() {
                     <button
                         onClick={() => setIsOpen(!isOpen)}
                         className="md:hidden text-white p-2 hover:text-elite-gold transition-colors ml-auto"
-                        aria-label="Toggle menu"
+                        aria-label={isOpen ? "Close menu" : "Open menu"}
+                        aria-expanded={isOpen}
                     >
-                        <svg
-                            className="w-6 h-6"
-                            fill="none"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                        >
-                            {isOpen ? (
-                                <path d="M6 18L18 6M6 6l12 12" />
-                            ) : (
-                                <path d="M4 6h16M4 12h16M4 18h16" />
-                            )}
-                        </svg>
+                        {isOpen ? <CloseIcon /> : <MenuIcon />}
                     </button>
                 </div>
 
@@ -258,25 +239,22 @@ export default function Navigation() {
                                             setIsSeasonsOpen(!isSeasonsOpen)
                                         }
                                         className="w-full flex items-center justify-between px-4 py-3.5 text-white hover:text-elite-gold hover:bg-ultimate-red/10 transition-all text-base font-medium"
+                                        aria-expanded={isSeasonsOpen}
+                                        aria-label={
+                                            isSeasonsOpen
+                                                ? "Close seasons menu"
+                                                : "Open seasons menu"
+                                        }
                                     >
                                         <span>{link.label}</span>
-                                        <svg
+                                        <ChevronDownIcon
                                             className={`w-4 h-4 transition-transform duration-300 ${
                                                 isSeasonsOpen
                                                     ? "rotate-180"
                                                     : ""
                                             }`}
-                                            fill="none"
-                                            stroke="currentColor"
-                                            viewBox="0 0 24 24"
-                                        >
-                                            <path
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                                strokeWidth={2}
-                                                d="M19 9l-7 7-7-7"
-                                            />
-                                        </svg>
+                                            aria-hidden={true}
+                                        />
                                     </button>
                                     <div
                                         className={`overflow-hidden transition-all duration-300 ease-in-out ${

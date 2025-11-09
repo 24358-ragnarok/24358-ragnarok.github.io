@@ -2,6 +2,9 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import { seasons } from "@/data/seasons";
+import { generateSeasonPageMetadata } from "@/lib/metadata-utils";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
+import { EmailIcon } from "@/components/Icons";
 
 type Props = {
     params: Promise<{ slug: string }> | { slug: string };
@@ -23,10 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         };
     }
 
-    return {
-        title: `${season.name} ${season.year} - Ragnarok FTC 24358`,
-        description: season.description,
-    };
+    return generateSeasonPageMetadata(season);
 }
 
 export default async function SeasonPage({ params }: Props) {
@@ -39,6 +39,18 @@ export default async function SeasonPage({ params }: Props) {
 
     return (
         <>
+            {/* Breadcrumb Structured Data for SEO */}
+            <BreadcrumbSchema
+                items={[
+                    { name: "Home", url: "/" },
+                    { name: "Seasons", url: "/#robots" },
+                    {
+                        name: `${season.name} ${season.year}`,
+                        url: `/seasons/${season.slug}`,
+                    },
+                ]}
+            />
+
             {/* Header */}
             <section className="relative py-12 md:py-16 overflow-hidden">
                 <div className="container-custom text-center relative z-10">
@@ -70,7 +82,7 @@ export default async function SeasonPage({ params }: Props) {
                             {season.phases.map((phase, index) => (
                                 <div key={index} className="card glow-border">
                                     <div className="flex items-start gap-6">
-                                        <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-ultimate-red flex items-center justify-center text-white font-bold text-xl font-display shadow-lg">
+                                        <div className="shrink-0 w-14 h-14 rounded-xl bg-ultimate-red flex items-center justify-center text-white font-bold text-xl font-display shadow-lg">
                                             {index + 1}
                                         </div>
                                         <div className="flex-1">
@@ -145,17 +157,7 @@ export default async function SeasonPage({ params }: Props) {
                         href="mailto:roboticswaukee@gmail.com"
                         className="btn-primary text-lg px-10 py-5"
                     >
-                        <svg
-                            className="w-6 h-6"
-                            fill="none"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2.5"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                        >
-                            <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                        </svg>
+                        <EmailIcon className="w-6 h-6" aria-hidden={true} />
                         Contact Us
                     </a>
                 </div>

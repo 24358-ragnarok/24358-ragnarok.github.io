@@ -64,14 +64,7 @@ p {
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
   transition: color 0.2s ease;
-}
-
-a:hover {
-  color: var(--ultimate-red);
-  text-decoration: underline;
 }
 
 ::selection {
@@ -177,19 +170,17 @@ body.scrollbar-visible ::-webkit-scrollbar-thumb {
   border-radius: 999px;
   font-weight: 700;
   font-size: 0.98rem;
-  text-decoration: none;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.65rem;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+  transition: transform 0.25s ease, filter 0.25s ease;
   border: none;
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
   filter: brightness(1.05);
-  text-decoration: none;
   color: var(--ash-black);
 }
 
@@ -200,7 +191,6 @@ body.scrollbar-visible ::-webkit-scrollbar-thumb {
   border-radius: 999px;
   font-weight: 600;
   font-size: 0.98rem;
-  text-decoration: none;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -215,24 +205,13 @@ body.scrollbar-visible ::-webkit-scrollbar-thumb {
   background: rgba(255, 235, 41, 0.18);
   transform: translateY(-1px);
   color: var(--elite-gold);
-  text-decoration: none;
 }
 
 .gradient-text {
   color: var(--ultimate-red);
 }
 
-.trophy-gold {
-  color: var(--elite-gold);
-}
-
-.trophy-silver {
-  color: var(--gear-gray);
-}
-
-.trophy-bronze {
-  color: var(--ash-black);
-}
+/* Trophy colors moved to Tailwind config for better reusability */
 
 .loading-spinner {
   width: 52px;

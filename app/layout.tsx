@@ -5,6 +5,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import DynamicScrollbar from "@/components/DynamicScrollbar";
 import StructuredData from "@/components/StructuredData";
+import ClientLayout from "@/components/ClientLayout";
 import { Analytics } from "@vercel/analytics/react";
 
 const bodyFont = Inter({ subsets: ["latin"], variable: "--font-body" });
@@ -152,18 +153,37 @@ export default function RootLayout({
             data-scroll-behavior="smooth"
             className={`${bodyFont.variable} ${displayFont.variable} ${monoFont.variable}`}
         >
+            <head>
+                {/* Preload critical custom font */}
+                <link
+                    rel="preload"
+                    href="/fonts/Top Show.otf"
+                    as="font"
+                    type="font/otf"
+                    crossOrigin="anonymous"
+                />
+                {/* DNS Prefetch & Preconnect for external resources */}
+                <link rel="dns-prefetch" href="https://api.ftcscout.org" />
+                <link
+                    rel="preconnect"
+                    href="https://api.ftcscout.org"
+                    crossOrigin="anonymous"
+                />
+            </head>
             <body className="font-sans antialiased text-white">
                 <StructuredData />
                 <DynamicScrollbar />
                 <div className="global-bg" aria-hidden="true" />
                 <Navigation />
-                <main
-                    className="relative z-10"
-                    style={{ paddingTop: "4.5rem" }}
-                >
-                    {children}
-                </main>
-                <Footer />
+                <ClientLayout>
+                    <main
+                        className="relative z-10"
+                        style={{ paddingTop: "4.5rem" }}
+                    >
+                        {children}
+                    </main>
+                    <Footer />
+                </ClientLayout>
                 <Analytics />
             </body>
         </html>

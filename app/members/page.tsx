@@ -1,15 +1,22 @@
 import { Metadata } from "next";
 import MemberCard from "@/components/MemberCard";
 import { members, alumni } from "@/data/members";
+import { generateMemberPageMetadata } from "@/lib/metadata-utils";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
-export const metadata: Metadata = {
-    title: "Our Team - Ragnarok FTC 24358",
-    description: "Meet the brilliant minds behind Ragnarok FTC Team 24358",
-};
+export const metadata: Metadata = generateMemberPageMetadata();
 
 export default function MembersPage() {
     return (
         <>
+            {/* Breadcrumb Structured Data for SEO */}
+            <BreadcrumbSchema
+                items={[
+                    { name: "Home", url: "/" },
+                    { name: "Team Members", url: "/members" },
+                ]}
+            />
+
             {/* Header */}
             <section className="relative py-12 md:py-16 overflow-hidden">
                 <div className="container-custom text-center relative z-10">

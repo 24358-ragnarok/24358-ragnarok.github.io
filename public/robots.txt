@@ -1,20 +1,33 @@
 # robots.txt for Ragnarok FTC Team 24358
 # https://ragnarokftc.com
 
-User-agent: *
-Allow: /
-
-# Disallow API routes from being indexed
-Disallow: /api/
-
-# Allow all other pages
-Allow: /members
-Allow: /results
-Allow: /seasons
-
 # Sitemap location
 Sitemap: https://ragnarokftc.com/sitemap.xml
 
-# Crawl delay (optional, helps prevent server overload)
+# Default rules for all crawlers
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_next/static/
 Crawl-delay: 1
+
+# Google - no crawl delay for optimal indexing
+User-agent: Googlebot
+Disallow: /api/
+Crawl-delay: 0
+
+User-agent: Googlebot-Image
+Allow: /images/
+
+# Social media crawlers - allow immediate access for cards
+User-agent: facebookexternalhit
+User-agent: Twitterbot
+Crawl-delay: 0
+
+# Block aggressive crawlers
+User-agent: AhrefsBot
+User-agent: SemrushBot
+User-agent: MJ12bot
+User-agent: DotBot
+Disallow: /
 
