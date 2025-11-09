@@ -27,6 +27,7 @@ export const achievements: Achievement[] = [
         place: "2nd Place",
         icon: "silver",
         year: 2025,
+        eventName: "Iowa State Championship",
     },
     {
         id: "2025-coral-sea-control",
@@ -35,6 +36,7 @@ export const achievements: Achievement[] = [
         place: "1st Place",
         icon: "gold",
         year: 2025,
+        eventName: "Coral Sea League Championship",
     },
     {
         id: "2024-pollock-control",
@@ -43,5 +45,6 @@ export const achievements: Achievement[] = [
         place: "2nd Place",
         icon: "silver",
         year: 2024,
+        eventName: "Pollock League Championship",
     },
 ];

@@ -11,7 +11,9 @@ export const teamInfo: TeamInfo = {
     teamName: "Ragnarok",
     location: "Waukee, Iowa",
     description:
-        "We are Ragnarok, an FTC Robotics team based out of Waukee, Iowa. We are both the Ragnarok team and the Waukee Northwest Robotics Club, driven by the mission to revolutionize STEM technology and make it accessible to learners of all ages.",
+        "Ragnarok is a First Tech Challenge Robotics team based out of the Waukee School " +
+        "District. We are both the Ragnarok team and the Waukee Northwest Robotics Club, driven " +
+        "by a love for STEM and the opportunity to bring the future of technology to students of all ages.",
     email: "roboticswaukee@gmail.com",
     socialLinks: [
         {

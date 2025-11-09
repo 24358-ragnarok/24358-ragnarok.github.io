@@ -67,10 +67,13 @@ export function getFromCache<T>(key: string): T | null {
 
 /**
  * Store data in cache with automatic expiration
+ * @param key - Cache key
+ * @param data - Data to cache
+ * @param customTTL - Optional custom TTL in seconds (overrides default behavior)
  */
-export function setInCache<T>(key: string, data: T): void {
+export function setInCache<T>(key: string, data: T, customTTL?: number): void {
     const now = Date.now();
-    const ttl = getCacheTTL();
+    const ttl = customTTL ? customTTL * 1000 : getCacheTTL(); // Convert seconds to milliseconds if custom TTL provided
 
     cache.set(key, {
         data,

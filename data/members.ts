@@ -47,7 +47,7 @@ export const members: Member[] = [
         name: "Ben Boonstra",
         role: "Co-Captain • Head Developer",
         image: "/images/members/ben.png",
-        bio: "Since he was 7, Ben has programmed games, robots, apps, and more. Ben is both the Head of Programming and Co-captain; this is his second year in FTC and he is excited to build upon his previous experience to create complex and in-depth technologies. He hopes to use this experience as a kickstart to his software development career.",
+        bio: "Since he was 7, Ben has programmed games, robots, apps, and more. Ben is both the Head of Programming and Co-Captain, totalling three years in FTC. He is excited to build upon his previous experience to create complex and in-depth technologies, and hopes to use this experience as a kickstart to his software development career.",
         years: [2023, 2024, 2025],
         executive: true,
         historicalRoles: [
@@ -61,7 +61,7 @@ export const members: Member[] = [
         name: "Daouda Kaba",
         role: "Head of Management",
         image: "/images/members/daouda.png",
-        bio: "Daouda is one of the most joyous people you'll ever meet. He is a member of the build team, and always leaves everyone with a grin. His strong aptitude for learning mixed with his adaptability catapults our build team to the top. He hopes that this experience will help with his dream of becoming a graphic designer.",
+        bio: "Daouda is one of the most joyous people you'll ever meet. He is the lead of outreach, communications, and coordination, and always leaves everyone with a smile. His strong aptitude for learning mixed with his adaptability catapults our team to the top. He hopes that this experience will help with his dream of becoming a graphic designer.",
         years: [2023, 2024, 2025],
         executive: true,
         historicalRoles: [
@@ -70,31 +70,21 @@ export const members: Member[] = [
         ],
     },
 
-    // ACTIVE MEMBERS
     {
         id: "deepak-pattapu",
         name: "Deepak Pattapu",
         role: "Senior Developer",
         image: "/images/members/deepak.png",
-        bio: "As a seasoned member of Ragnarok, I'm excited to keep pushing my skills and contributing to the team. I started coding when I was 9 and have experience with HTML, CSS, JavaScript, Python, and Java. I'm always looking for ways to improve and learn new things. This is my third year in FTC, and I can't wait to see what we accomplish this season!",
+        bio: "As a seasoned member of Ragnarok, Deepak is excited to improve his skills and contribute to the team. He started coding when he was 9 and has experience with HTML, CSS, JavaScript, Python, and Java. He is always looking for ways to improve and learn new things. This is his fourth year in FTC, and he can't wait to see what we accomplish this season!",
         years: [2024, 2025],
         historicalRoles: [{ year: 2025, role: "Senior Developer" }],
-    },
-    {
-        id: "levi-bolie",
-        name: "Levi Bolie",
-        role: "Materials Engineer",
-        image: "/images/members/levi.png",
-        bio: "As a rookie member of the build team, Levi brings fresh energy and enthusiasm to Ragnarok. Despite being new to FTC, he has quickly proven himself to be a dedicated builder with a natural talent for mechanical design. His eagerness to learn and willingness to tackle new challenges makes him a valuable addition to the team.",
-        years: [2024, 2025],
-        historicalRoles: [{ year: 2025, role: "Materials Engineer" }],
     },
     {
         id: "harshith-reddy",
         name: "Harshith Reddy Anumula",
         role: "Programmer",
         image: "/images/members/harshith.png",
-        bio: "As a rookie member of Ragnarok, I'm excited to bring my passion for programming to the team. I've been coding since I was 10 and have experience with HTML, CSS, JavaScript, and Python. I'm always focused on improving my skills and learning new things. This is my first year in FTC, and I'm eager to learn and contribute however I can!",
+        bio: "With two years on Ragnarok, Harshith is excited to bring his passion for programming to the team. He has been coding since he was 10 and has experience with HTML, CSS, JavaScript, and Python. He is always focused on improving his skills and learning new things.",
         years: [2024, 2025],
         historicalRoles: [
             { year: 2024, role: "Web Developer" },
@@ -106,7 +96,7 @@ export const members: Member[] = [
         name: "Agney Kakkunnath",
         role: "Mechanical Engineer",
         image: "/images/members/agney.jpg",
-        bio: "I'm Agney Kakkunnath, and this is my fifth year in FTC. As a mechanical engineer, I'm fully dedicated to the building process, ensuring everything is designed and assembled to help the team perform at its best. I'm also skilled at CAD and love encouraging the team to stay motivated and work together!",
+        bio: "With five years in FTC and two on Ragnarok, Agney is fully dedicated to the building process, ensuring everything is designed and assembled to help the team perform at its best. Agney is also skilled at CAD and loves encouraging the team to stay motivated and work together!",
         years: [2024, 2025],
         historicalRoles: [{ year: 2025, role: "Mechanical Engineer" }],
     },
@@ -115,7 +105,7 @@ export const members: Member[] = [
         name: "Adarsh Rajesh",
         role: "Web Developer",
         image: "/images/members/Adarsh.jpg",
-        bio: "Hi, I'm Adarsh! I've been part of FTC for 2 years. I've programmed in HTML, CSS, JavaScript, and Python, and I love building projects, solving problems, and learning new skills to help the team succeed!",
+        bio: "Adarsh is the main web developer on Ragnarok, with two years in FTC. He has programmed in HTML, CSS, JavaScript, and Python, and loves building projects, solving problems, and learning new skills.",
         years: [2024, 2025],
         historicalRoles: [{ year: 2024, role: "Web Developer" }],
     },
@@ -124,7 +114,7 @@ export const members: Member[] = [
         name: "Noel Antony",
         role: "Builder",
         image: "/images/members/noel.jpeg",
-        bio: "I'm Noel, a rookie member of the team FTC and I love building and creating things. I'm excited to learn, contribute, and help the team succeed!",
+        bio: "Noel is a rookie member of the team. He loves building and creating things, and is excited to learn, contribute, and help the team succeed!",
         years: [2025],
     },
     {
@@ -132,7 +122,7 @@ export const members: Member[] = [
         name: "Beck Hansen",
         role: "Builder",
         image: "/images/members/beck.jpeg",
-        bio: "Hi, I'm Beck. I am one of the builders on the team, and I love to bring new and creative ideas to the table, and tackle new challenges. I'm super grateful for my awesome colleagues, and I'm excited to contribute to the team this year",
+        bio: "Beck is one of the builders on the team, starting FTC this year. He loves to bring new and creative ideas to the table, and tackle new challenges. He is super grateful for his awesome colleagues, and is excited to contribute to the team this season!",
         years: [2025],
     },
     {
@@ -140,7 +130,7 @@ export const members: Member[] = [
         name: "Eli Wilhelm",
         role: "Builder",
         image: "/images/members/eli.png",
-        bio: "Hi, I'm Eli! I'm a rookie and one of the builders on the team. I love bringing ideas to life through building, and I'm excited to learn, create, and contribute to the team!",
+        bio: "Eli is a rookie member of the team, starting FTC this year. He loves bringing ideas to life through building, and is excited to learn, create, and contribute to the team!",
         years: [2025],
     },
     {
@@ -148,7 +138,7 @@ export const members: Member[] = [
         name: "Jacob Weldon",
         role: "Programmer",
         image: "/images/members/jacob.jpg",
-        bio: "Hi! I'm Jacob, a passionate programmer who loves creating cool projects and solving problems. I enjoy learning new tech and helping my team succeed through teamwork, ideas, and support.",
+        bio: "Jacob is a passionate programmer who loves creating cool projects and solving problems. He enjoys learning new tech and helping his team succeed through teamwork, ideas, and support.",
         years: [2025],
     },
     {
@@ -156,7 +146,7 @@ export const members: Member[] = [
         name: "Ella Cahill",
         role: "Builder",
         image: "/images/members/ella.JPG",
-        bio: "Hi! I'm Ella, a builder on our robotics team. I enjoy creating strong and reliable parts for our robot and working with my teammates to make our designs come to life.",
+        bio: "Ella is a builder on the team, starting FTC this year. She enjoys creating strong and reliable parts for our robot and working with her teammates to make our designs come to life.",
         years: [2025],
     },
     {
@@ -164,7 +154,7 @@ export const members: Member[] = [
         name: "Sasha Kosokina",
         role: "Builder",
         image: "/images/members/sasha.JPG",
-        bio: "Hi! I'm Sasha, a builder on our robotics team. I love designing, building, and making sure every part fits perfectly. I enjoy working with my teammates to bring our robot ideas to life!",
+        bio: "Sasha is a rookie builder on Ragnarok. She loves designing, building, and making sure every part fits perfectly. She enjoys working with her teammates to bring our robot ideas to life!",
         years: [2025],
     },
     {
@@ -172,7 +162,7 @@ export const members: Member[] = [
         name: "Ashley Zhu",
         role: "Builder",
         image: "/images/members/ashley.JPG",
-        bio: "Hi! I'm Ashley, and I'm a builder on our robotics team. I love bringing ideas to life by constructing and assembling our robots, making sure everything fits and works perfectly. I enjoy teamwork and figuring out creative ways to solve problems while building something amazing with the team.",
+        bio: "Ashley is a builder on the team. She loves bringing ideas to life by constructing and assembling our robots, making sure everything fits and works perfectly. She enjoys teamwork and figuring out creative ways to solve problems while building something amazing with the team.",
         years: [2025],
     },
 ];

@@ -101,9 +101,10 @@ export default function Navigation() {
     ];
 
     // Dynamically generate season links from seasons data
-    const seasonLinks = seasons.map((season) => ({
+    const seasonLinks = seasons.map((season, index) => ({
         href: `/seasons/${season.slug}`,
         label: season.name,
+        isCurrent: index === 0, // First season is the current one
     }));
 
     return (
@@ -179,7 +180,11 @@ export default function Navigation() {
                                             <Link
                                                 key={season.href}
                                                 href={season.href}
-                                                className="block px-5 py-3 text-white hover:text-elite-gold hover:bg-ultimate-red/10 transition-all text-sm border-b border-ultimate-red/10 last:border-0"
+                                                className={`block px-5 py-3 hover:bg-ultimate-red/10 transition-all text-sm border-b border-ultimate-red/10 last:border-0 ${
+                                                    season.isCurrent
+                                                        ? "text-elite-gold font-bold hover:text-elite-gold"
+                                                        : "text-white hover:text-elite-gold"
+                                                }`}
                                             >
                                                 {season.label}
                                             </Link>
@@ -284,7 +289,11 @@ export default function Navigation() {
                                             <Link
                                                 key={season.href}
                                                 href={season.href}
-                                                className="block px-8 py-3 text-gray-300 hover:text-elite-gold hover:bg-ultimate-red/10 transition-all text-sm border-l-2 border-transparent hover:border-ultimate-red/30"
+                                                className={`block px-8 py-3 hover:bg-ultimate-red/10 transition-all text-sm border-l-2 border-transparent hover:border-ultimate-red/30 ${
+                                                    season.isCurrent
+                                                        ? "text-elite-gold font-bold hover:text-elite-gold"
+                                                        : "text-gray-300 hover:text-elite-gold"
+                                                }`}
                                                 onClick={() => {
                                                     setIsOpen(false);
                                                     setIsSeasonsOpen(false);

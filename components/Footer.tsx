@@ -51,27 +51,24 @@ export default function Footer() {
                             <li>
                                 <Link
                                     href="/"
-                                    className="text-gray-300 hover:text-elite-gold transition-colors text-sm flex items-center gap-2 group"
+                                    className="text-gray-300 hover:text-elite-gold transition-colors text-sm"
                                 >
-                                    <span className="w-1.5 h-1.5 bg-ultimate-red rounded-full group-hover:bg-elite-gold transition-colors" />
                                     Home
                                 </Link>
                             </li>
                             <li>
                                 <Link
                                     href="/members"
-                                    className="text-gray-300 hover:text-elite-gold transition-colors text-sm flex items-center gap-2 group"
+                                    className="text-gray-300 hover:text-elite-gold transition-colors text-sm"
                                 >
-                                    <span className="w-1.5 h-1.5 bg-ultimate-red rounded-full group-hover:bg-elite-gold transition-colors" />
                                     Team Members
                                 </Link>
                             </li>
                             <li>
                                 <Link
                                     href="/results"
-                                    className="text-gray-300 hover:text-elite-gold transition-colors text-sm flex items-center gap-2 group"
+                                    className="text-gray-300 hover:text-elite-gold transition-colors text-sm"
                                 >
-                                    <span className="w-1.5 h-1.5 bg-ultimate-red rounded-full group-hover:bg-elite-gold transition-colors" />
                                     Match Results
                                 </Link>
                             </li>
@@ -116,17 +113,17 @@ export default function Footer() {
                         </div>
                     </div>
                 </div>
+            </div>
 
-                {/* Bottom Bar */}
-                <div className="border-t border-ultimate-red/20 pt-8 text-center">
-                    <p className="text-gray-400 text-sm">
-                        &copy; {currentYear}{" "}
-                        <span className="text-elite-gold font-bold text-base">
-                            {teamInfo.teamName}
-                        </span>{" "}
-                        - FTC Team {teamInfo.teamNumber}. All rights reserved.
-                    </p>
-                </div>
+            {/* Bottom Bar */}
+            <div className="border-t border-ultimate-red/20 pt-8 mt-12 text-center">
+                <p className="text-gray-400 text-sm">
+                    &copy; {currentYear}{" "}
+                    <span className="text-elite-gold font-bold text-base">
+                        {teamInfo.teamName}
+                    </span>{" "}
+                    - FTC Team {teamInfo.teamNumber}. All rights reserved.
+                </p>
             </div>
         </footer>
     );

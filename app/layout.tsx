@@ -19,15 +19,15 @@ const monoFont = IBM_Plex_Mono({
 });
 
 const siteUrl = "https://ragnarokftc.com";
-const siteName = "Ragnarok FTC Team 24358";
+const siteName = "24358 Ragnarok";
 const siteDescription =
-    "Revolutionizing STEM Technology in Waukee, Iowa - FTC Robotics Team 24358. Join us in our mission to make robotics and technology accessible to learners of all ages.";
+    "A best-in-state robotics team focused on bringing the cutting edge of robotics to student engineers.";
 
 export const metadata: Metadata = {
     metadataBase: new URL(siteUrl),
     title: {
-        default: "Ragnarok - FTC Team 24358",
-        template: "%s | Ragnarok FTC",
+        default: "24358 Ragnarok",
+        template: "%s | 24358 Ragnarok",
     },
     description: siteDescription,
     keywords: [
@@ -37,6 +37,7 @@ export const metadata: Metadata = {
         "Team 24358",
         "Waukee",
         "Iowa",
+        "24358",
         "FIRST Tech Challenge",
         "STEM",
         "Engineering",
@@ -48,9 +49,9 @@ export const metadata: Metadata = {
         "STEM Education",
         "Robotics Club",
     ],
-    authors: [{ name: "Ragnarok FTC Team 24358" }],
-    creator: "Ragnarok FTC Team 24358",
-    publisher: "Ragnarok FTC Team 24358",
+    authors: [{ name: "FTC Team 24358 Ragnarok" }],
+    creator: "FTC Team 24358 Ragnarok",
+    publisher: "FTC Team 24358 Ragnarok",
     formatDetection: {
         email: false,
         address: false,
@@ -62,19 +63,19 @@ export const metadata: Metadata = {
         url: siteUrl,
         title: siteName,
         description: siteDescription,
-        siteName: "Ragnarok FTC",
+        siteName: "24358 Ragnarok",
         images: [
             {
                 url: "/images/og-image.png",
                 width: 1200,
                 height: 630,
-                alt: "Ragnarok FTC Team 24358 Logo",
+                alt: "Ragnarok Logo",
             },
             {
                 url: "/images/logo.svg",
                 width: 1200,
                 height: 1200,
-                alt: "Ragnarok FTC Team 24358 Logo",
+                alt: "Ragnarok Logo",
             },
         ],
     },
@@ -148,6 +149,7 @@ export default function RootLayout({
     return (
         <html
             lang="en"
+            data-scroll-behavior="smooth"
             className={`${bodyFont.variable} ${displayFont.variable} ${monoFont.variable}`}
         >
             <body className="font-sans antialiased text-white">

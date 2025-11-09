@@ -7,9 +7,13 @@ import { Member } from "@/lib/types";
 interface MemberCardProps {
     member: Member;
     index: number;
+    priority?: boolean;
 }
 
-export default function MemberCard({ member }: MemberCardProps) {
+export default function MemberCard({
+    member,
+    priority = false,
+}: MemberCardProps) {
     const [selectedYear, setSelectedYear] = useState<number>(2026);
 
     // Get the role for the selected year
@@ -28,31 +32,14 @@ export default function MemberCard({ member }: MemberCardProps) {
 
     return (
         <div
-            className={`group relative overflow-hidden rounded-2xl bg-gradient-to-br flex flex-col ${
+            className={`relative overflow-hidden rounded-2xl bg-gradient-to-br flex flex-col ${
                 member.executive
                     ? "from-elite-gold/10 via-[#0a0a0a] to-[#0a0a0a] border border-elite-gold/30"
                     : member.isAlumni
                     ? "from-gear-gray/10 via-[#0a0a0a] to-[#0a0a0a] border border-gear-gray/20 opacity-90"
                     : "from-ultimate-red/10 via-[#0a0a0a] to-[#0a0a0a] border border-ultimate-red/30"
-            } transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl ${
-                member.executive
-                    ? "hover:shadow-elite-gold/20"
-                    : member.isAlumni
-                    ? "hover:shadow-gear-gray/10"
-                    : "hover:shadow-ultimate-red/20"
             }`}
         >
-            {/* Background Glow Effect */}
-            <div
-                className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ${
-                    member.executive
-                        ? "bg-gradient-to-br from-elite-gold/5 to-transparent"
-                        : member.isAlumni
-                        ? "bg-gradient-to-br from-gear-gray/5 to-transparent"
-                        : "bg-gradient-to-br from-ultimate-red/5 to-transparent"
-                }`}
-            />
-
             {/* Image Section */}
             <div className="relative h-64 md:h-72 overflow-hidden">
                 <div className="relative w-full h-full">
@@ -60,7 +47,9 @@ export default function MemberCard({ member }: MemberCardProps) {
                         src={member.image}
                         alt={member.name}
                         fill
-                        className="object-cover transition-transform duration-700 group-hover:scale-110"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        priority={priority}
+                        className="object-cover"
                     />
                     {/* Subtle gradient overlay */}
                     <div
@@ -97,12 +86,12 @@ export default function MemberCard({ member }: MemberCardProps) {
             <div className="px-6 pb-6 pt-5 relative z-10 flex flex-col flex-grow">
                 {/* Name */}
                 <h3
-                    className={`text-2xl md:text-3xl font-bold mb-5 font-display transition-colors text-center ${
+                    className={`text-2xl md:text-3xl font-bold mb-5 font-display text-center ${
                         member.executive
-                            ? "text-elite-gold group-hover:text-elite-gold"
+                            ? "text-elite-gold"
                             : member.isAlumni
                             ? "text-gray-300"
-                            : "text-white group-hover:text-elite-gold"
+                            : "text-white"
                     }`}
                 >
                     {member.name}
@@ -132,7 +121,7 @@ export default function MemberCard({ member }: MemberCardProps) {
                 )}
 
                 {/* Bio */}
-                <p className="text-gray-300 leading-relaxed text-sm md:text-base group-hover:text-gray-200 transition-colors flex-grow">
+                <p className="text-gray-300 leading-relaxed text-sm md:text-base flex-grow">
                     {member.bio}
                 </p>
             </div>

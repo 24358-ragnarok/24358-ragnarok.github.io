@@ -27,6 +27,7 @@ export interface Achievement {
     place: string; // e.g., "1st Place", "2nd Place"
     icon: string; // Icon type: "gold", "silver", "bronze"
     year: number;
+    eventName: string; // Event where award was won
 }
 
 export interface Season {
@@ -73,7 +74,100 @@ export interface TeamInfo {
     socialLinks: SocialLink[];
 }
 
-// FTC API Types
+// FTCScout GraphQL API Types
+export interface QuickStats {
+    tot: { rank: number };
+    dc: { rank: number };
+    auto: { rank: number };
+}
+
+export interface Award {
+    type: string;
+    season: number;
+    placement: number;
+    event: {
+        name: string;
+    };
+}
+
+export interface TeamInMatch {
+    alliance: "Red" | "Blue";
+    team: {
+        name: string;
+        number: number;
+        website?: string;
+    };
+}
+
+export interface MatchScores {
+    red: {
+        totalPoints: number;
+    };
+    blue: {
+        totalPoints: number;
+    };
+}
+
+export interface Match {
+    actualStartTime: string | null;
+    hasBeenPlayed: boolean;
+    matchNum: number;
+    scheduledStartTime: string;
+    scores: MatchScores | null;
+    teams: TeamInMatch[];
+}
+
+export interface Event {
+    name: string;
+    finished: boolean;
+    liveStreamURL: string | null;
+    ongoing: boolean;
+    start: string;
+    started: boolean;
+    website: string | null;
+    updatedAt: string;
+    stats?: EventStats2025;
+}
+
+export interface EventStats2025 {
+    rank: number;
+    rp: number;
+    wins: number;
+    tot: {
+        totalPoints: number;
+    };
+    ties: number;
+    losses: number;
+    max: {
+        totalPoints: number;
+    };
+    opr: {
+        totalPoints: number;
+    };
+}
+
+export interface TeamMatch {
+    season: number;
+    alliance: "Red" | "Blue";
+    event: Event;
+    match: Match;
+}
+
+export interface TeamEventWithStats {
+    event: {
+        name: string;
+    };
+    stats: EventStats2025;
+}
+
+export interface FTCScoutTeamData {
+    quickStats: QuickStats;
+    awards: Award[];
+    matches: TeamMatch[];
+    events?: TeamEventWithStats[];
+}
+
+// Legacy types for compatibility - transformed from GraphQL data
 export interface RankingData {
     rank: number;
     teamNumber: string;
@@ -97,6 +191,8 @@ export interface MatchResults {
     ties: number;
     rankings: RankingData[];
     lastUpdated?: string;
+    currentEvent?: Event | null; // Current or most recent event
+    recentMatches?: TeamMatch[]; // Recent matches for display
 }
 
 export interface CurrentUpdate {
