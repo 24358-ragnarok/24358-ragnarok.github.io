@@ -22,11 +22,11 @@ const faqs = [
     },
     {
         question: "How can I join FTC Team 24358 Ragnarok?",
-        answer: "If you're interested in joining our team, please contact us at roboticswaukee@gmail.com. We welcome students passionate about robotics, engineering, programming, and STEM.",
+        answer: "If you're interested in joining our team, please contact us at team@ragnarokftc.com. We welcome students passionate about robotics, engineering, programming, and STEM.",
     },
     {
         question: "Does FTC Team 24358 accept sponsors?",
-        answer: "Yes! We welcome sponsors who want to support STEM education and robotics. Sponsorships help us with robot parts, competition fees, and team resources. Contact us at roboticswaukee@gmail.com to learn about sponsorship opportunities.",
+        answer: "Yes! We welcome sponsors who want to support STEM education and robotics. Sponsorships help us with robot parts, competition fees, and team resources. Contact us at team@ragnarokftc.com to learn about sponsorship opportunities.",
     },
     {
         question: "What skills do you need for FTC robotics?",

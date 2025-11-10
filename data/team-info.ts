@@ -14,7 +14,7 @@ export const teamInfo: TeamInfo = {
         "Ragnarok is a First Tech Challenge Robotics team based out of the Waukee School " +
         "District. We are both the Ragnarok team and the Waukee Northwest Robotics Club, driven " +
         "by a love for STEM and the opportunity to bring the future of technology to students of all ages.",
-    email: "roboticswaukee@gmail.com",
+    email: "team@ragnarokftc.com",
     socialLinks: [
         {
             platform: "GitHub",

@@ -30,10 +30,10 @@ export const members: Member[] = [
     // ELITE MEMBERS (Leadership)
     {
         id: "connor-israel",
-        name: "Connor Israel",
+        name: "Conner Israel",
         role: "Captain • Head Engineer",
-        image: "/images/members/connor.png",
-        bio: "Connor is a builder who has vast experience in building designs and the principles of engineering. This is his second season in FIRST and he enjoys the applicable growth opportunities found in FTC. He, aptly, hopes to pursue a future in robotics engineering.",
+        image: "/images/members/conner.png",
+        bio: "Conner is a builder who has vast experience in building designs and the principles of engineering. This is his second season in FIRST and he enjoys the applicable growth opportunities found in FTC. He, aptly, hopes to pursue a future in robotics engineering.",
         years: [2023, 2024, 2025],
         executive: true,
         historicalRoles: [
@@ -41,6 +41,9 @@ export const members: Member[] = [
             { year: 2024, role: "Captain • Head Engineer" },
             { year: 2025, role: "Captain • Head Engineer" },
         ],
+        socialLinks: {
+            email: "conner@ragnarokftc.com",
+        },
     },
     {
         id: "ben-boonstra",
@@ -55,6 +58,10 @@ export const members: Member[] = [
             { year: 2024, role: "Co-Captain • Head Developer" },
             { year: 2025, role: "Co-Captain • Head Developer" },
         ],
+        socialLinks: {
+            email: "ben@ragnarokftc.com",
+            github: "bboonstra",
+        },
     },
     {
         id: "daouda-kaba",
@@ -68,6 +75,9 @@ export const members: Member[] = [
             { year: 2023, role: "Engineer" },
             { year: 2025, role: "Head of Management" },
         ],
+        socialLinks: {
+            email: "daouda@ragnarokftc.com",
+        },
     },
 
     {

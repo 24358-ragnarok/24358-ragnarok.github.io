@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { Member } from "@/lib/types";
+import { EmailIcon, GithubIcon } from "./Icons";
 
 interface MemberCardProps {
     member: Member;
@@ -62,13 +63,6 @@ export default function MemberCard({
                         }`}
                     />
                 </div>
-
-                {/* Elite Badge */}
-                {member.executive && (
-                    <div className="absolute top-4 right-4">
-                        <div className="w-3 h-3 rounded-full bg-elite-gold shadow-lg shadow-elite-gold/50 animate-pulse" />
-                    </div>
-                )}
             </div>
 
             {/* Role Banner */}
@@ -121,9 +115,48 @@ export default function MemberCard({
                 )}
 
                 {/* Bio */}
-                <p className="text-gray-300 leading-relaxed text-sm md:text-base flex-grow">
+                <p className="text-gray-300 leading-relaxed text-sm md:text-base flex-grow mb-4">
                     {member.bio}
                 </p>
+
+                {/* Social Links */}
+                {member.socialLinks &&
+                    (member.socialLinks.email || member.socialLinks.github) && (
+                        <div className="flex gap-3 justify-center mt-auto pt-4 border-t border-gear-gray/20">
+                            {member.socialLinks.email && (
+                                <a
+                                    href={`mailto:${member.socialLinks.email}`}
+                                    className={`p-2 rounded-lg transition-all duration-300 hover:scale-110 ${
+                                        member.executive
+                                            ? "bg-elite-gold text-ash-black hover:bg-elite-gold/90"
+                                            : member.isAlumni
+                                            ? "bg-gear-gray/20 text-gray-300 hover:bg-gear-gray/30"
+                                            : "bg-ultimate-red text-white hover:bg-ultimate-red/90"
+                                    }`}
+                                    aria-label={`Email ${member.name}`}
+                                >
+                                    <EmailIcon className="w-5 h-5" />
+                                </a>
+                            )}
+                            {member.socialLinks.github && (
+                                <a
+                                    href={`https://github.com/${member.socialLinks.github}`}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className={`p-2 rounded-lg transition-all duration-300 hover:scale-110 ${
+                                        member.executive
+                                            ? "bg-elite-gold text-ash-black hover:bg-elite-gold/90"
+                                            : member.isAlumni
+                                            ? "bg-gear-gray/20 text-gray-300 hover:bg-gear-gray/30"
+                                            : "bg-ultimate-red text-white hover:bg-ultimate-red/90"
+                                    }`}
+                                    aria-label={`${member.name}'s GitHub`}
+                                >
+                                    <GithubIcon className="w-5 h-5" />
+                                </a>
+                            )}
+                        </div>
+                    )}
             </div>
         </div>
     );

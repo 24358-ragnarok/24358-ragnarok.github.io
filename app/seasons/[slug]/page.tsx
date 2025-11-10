@@ -154,7 +154,7 @@ export default async function SeasonPage({ params }: Props) {
                         of robotics!
                     </p>
                     <a
-                        href="mailto:roboticswaukee@gmail.com"
+                        href="mailto:team@ragnarokftc.com"
                         className="btn-primary text-lg px-10 py-5"
                     >
                         <EmailIcon className="w-6 h-6" aria-hidden={true} />

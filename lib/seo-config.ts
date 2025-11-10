@@ -64,7 +64,7 @@ export const seoConfig = {
         location: "Waukee, Iowa",
         state: "Iowa",
         country: "United States",
-        email: "roboticswaukee@gmail.com",
+        email: "team@ragnarokftc.com",
         foundingYear: "2023",
     },
 

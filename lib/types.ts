@@ -18,6 +18,10 @@ export interface Member {
         year: number;
         role: string;
     }[];
+    socialLinks?: {
+        email?: string;
+        github?: string;
+    };
 }
 
 export interface Achievement {
