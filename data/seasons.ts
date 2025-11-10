@@ -89,6 +89,12 @@ export const seasons: Season[] = [
                 description:
                     "Our dedication and collaboration helped us win the Control Award, proving that teamwork can achieve anything!",
             },
+            {
+                image: "/images/seasons/iowa-state-championship-2025.jpeg",
+                title: "2024-2025 Iowa State Championship",
+                description:
+                    "Our team at the 2024-2025 FTC Iowa State Championship in Coralville, Iowa, showcasing our robot and celebrating our achievements.",
+            },
         ],
     },
     {
@@ -143,6 +149,12 @@ export const seasons: Season[] = [
                 title: "Team Bonding at Competition",
                 description:
                     "Our team supporting each other and learning together during our inaugural FTC season.",
+            },
+            {
+                image: "/images/seasons/iowa-league-championship-2024.jpeg",
+                title: "Iowa League Championship 2023-2024",
+                description:
+                    "Our team celebrating Second Place Control Award at the FTC Iowa Pollock League Championship in Norwalk, Iowa, February 17, 2024.",
             },
         ],
     },

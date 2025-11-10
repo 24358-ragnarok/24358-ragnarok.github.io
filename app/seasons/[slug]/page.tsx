@@ -117,13 +117,13 @@ export default async function SeasonPage({ params }: Props) {
                                     key={index}
                                     className="card card-hover overflow-hidden glow-border group"
                                 >
-                                    <div className="relative h-72 -m-8 mb-6 overflow-hidden">
+                                    <div className="relative w-full aspect-[4/3] -m-8 mb-6 overflow-hidden bg-ash-black/40">
                                         <Image
                                             src={item.image}
                                             alt={item.title}
                                             fill
                                             sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                                            className="object-cover group-hover:scale-110 transition-transform duration-500"
+                                            className="object-contain group-hover:scale-105 transition-transform duration-500"
                                         />
                                         <div className="absolute inset-0 bg-ash-black/60" />
                                     </div>
