@@ -55,6 +55,14 @@ export const seasons: Season[] = [
                     "The final step is to compete and learn from our experiences. We'll be gathering data from our matches to make continuous improvements to the robot and our strategy.",
             },
         ],
+        gallery: [
+            {
+                image: "/images/seasons/bobot.jpeg",
+                title: "Decode Robot",
+                description:
+                    "Our first robot for the 2025-2026 Decode season, ready to take on the challenge.",
+            },
+        ],
     },
     {
         id: "into-the-deep-2024",

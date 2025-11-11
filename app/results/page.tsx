@@ -72,7 +72,7 @@ export default async function ResultsPage() {
             {/* Header */}
             <section className="relative py-8 md:py-12 overflow-hidden pb-0 md:pb-0">
                 <div className="container-custom text-center relative z-10">
-                    <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold font-display">
+                    <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold font-top-show">
                         Match <span className="gradient-text">Results</span>
                     </h1>
                 </div>

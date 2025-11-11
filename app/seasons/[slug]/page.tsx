@@ -54,7 +54,7 @@ export default async function SeasonPage({ params }: Props) {
             {/* Header */}
             <section className="relative py-12 md:py-16 overflow-hidden">
                 <div className="container-custom text-center relative z-10">
-                    <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold font-display mb-6">
+                    <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold font-top-show mb-6">
                         {season.name}
                     </h1>
                     <p className="text-2xl text-elite-gold font-bold mb-6">

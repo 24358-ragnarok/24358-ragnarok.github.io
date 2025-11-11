@@ -20,7 +20,7 @@ export default function MembersPage() {
             {/* Header */}
             <section className="relative py-12 md:py-16 overflow-hidden">
                 <div className="container-custom text-center relative z-10">
-                    <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold font-display mb-6">
+                    <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold font-top-show mb-6">
                         Meet the <span className="gradient-text">Team</span>
                     </h1>
                     <div className="h-0.5 w-24 bg-ultimate-red mx-auto rounded-full mb-6" />
