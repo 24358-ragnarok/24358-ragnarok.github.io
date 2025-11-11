@@ -118,6 +118,45 @@ export function generateResultsPageMetadata(): Metadata {
 }
 
 /**
+ * Generate metadata for Resources page
+ */
+export function generateResourcesPageMetadata(): Metadata {
+    return {
+        title: "Resources for Teams",
+        description: `Tools, code, and resources used by ${seoConfig.team.fullName}. Open source code, development tools, and official FTC resources shared with the robotics community.`,
+        keywords: [
+            ...seoConfig.keywords,
+            "FTC resources",
+            "robotics tools",
+            "open source code",
+            "Pedro Pathing",
+            "FTC Fast Load",
+            "FTC development tools",
+            "FIRST Tech Challenge resources",
+        ],
+        openGraph: {
+            title: `Resources for Teams | ${seoConfig.siteName}`,
+            description: `Tools, code, and resources shared by ${seoConfig.siteName} with the FTC community`,
+            url: `${seoConfig.siteUrl}/resources`,
+            siteName: seoConfig.siteName,
+            images: [seoConfig.images.ogImage],
+            locale: "en_US",
+            type: "website",
+        },
+        twitter: {
+            card: "summary_large_image",
+            title: `Resources for Teams | ${seoConfig.siteName}`,
+            description: `Tools, code, and resources shared by ${seoConfig.siteName}`,
+            creator: seoConfig.social.twitter,
+            images: [seoConfig.images.ogImage.url],
+        },
+        alternates: {
+            canonical: `${seoConfig.siteUrl}/resources`,
+        },
+    };
+}
+
+/**
  * Generate metadata for Season page
  * TODO: Use in app/seasons/[slug]/page.tsx
  */

@@ -98,6 +98,7 @@ export default function Navigation() {
         { href: "/", label: "Home" },
         { href: "/members", label: "Members" },
         { href: "/results", label: "Results" },
+        { href: "/resources", label: "Resources" },
         { href: "#seasons", label: "Seasons", isDropdown: true },
     ];
 
