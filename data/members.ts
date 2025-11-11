@@ -31,15 +31,15 @@ export const members: Member[] = [
     {
         id: "connor-israel",
         name: "Conner Israel",
-        role: "Captain • Head Engineer",
+        role: "Captain • Lead Engineer",
         image: "/images/members/conner.png",
-        bio: "Conner is a builder who has vast experience in building designs and the principles of engineering. This is his second season in FIRST and he enjoys the applicable growth opportunities found in FTC. He, aptly, hopes to pursue a future in robotics engineering.",
+        bio: "Conner is the Lead Engineer of Ragnarok, and Captain in partnership with Ben. Conner has vast experience in engineering design, CAD, and system analysis. This is his third and final season in FIRST and he enjoys the growth opportunities and leadership as a Captain in FTC. He is excited to continue his journey in robotics engineering at college next year.",
         years: [2023, 2024, 2025],
         executive: true,
         historicalRoles: [
             { year: 2023, role: "Head Engineer" },
             { year: 2024, role: "Captain • Head Engineer" },
-            { year: 2025, role: "Captain • Head Engineer" },
+            { year: 2025, role: "Captain • Lead Engineer" },
         ],
         socialLinks: {
             email: "conner@ragnarokftc.com",
@@ -48,15 +48,15 @@ export const members: Member[] = [
     {
         id: "ben-boonstra",
         name: "Ben Boonstra",
-        role: "Co-Captain • Head Developer",
+        role: "Co-Captain • Lead Developer",
         image: "/images/members/ben.png",
-        bio: "Since he was 7, Ben has programmed games, robots, apps, and more. Ben is both the Head of Programming and Co-Captain, totalling three years in FTC. He is excited to build upon his previous experience to create complex and in-depth technologies, and hopes to use this experience as a kickstart to his software development career.",
+        bio: "Ben is both the Lead Developer and Co-Captain of Ragnarok, totalling three years in FTC. He uses his extensive experience in systems programming and object-oriented design to create award-winning FTC software, along  with his web development and brand management skills to elevate Ragnarok's presence. Ben will continue his journey in computer science in college next year.",
         years: [2023, 2024, 2025],
         executive: true,
         historicalRoles: [
             { year: 2023, role: "Head Developer" },
             { year: 2024, role: "Co-Captain • Head Developer" },
-            { year: 2025, role: "Co-Captain • Head Developer" },
+            { year: 2025, role: "Co-Captain • Lead Developer" },
         ],
         socialLinks: {
             email: "ben@ragnarokftc.com",
@@ -68,7 +68,7 @@ export const members: Member[] = [
         name: "Daouda Kaba",
         role: "Head of Management",
         image: "/images/members/daouda.png",
-        bio: "Daouda is one of the most joyous people you'll ever meet. He is the lead of outreach, communications, and coordination, and always leaves everyone with a smile. His strong aptitude for learning mixed with his adaptability catapults our team to the top. He hopes that this experience will help with his dream of becoming a graphic designer.",
+        bio: "Daouda is the lead of outreach, communications, and coordination at Ragnarok, and always leaves everyone with a smile. His strong aptitude for learning mixed with his adaptability catapults our team to the top. He hopes that this experience will help with his dream of becoming a graphic designer.",
         years: [2023, 2024, 2025],
         executive: true,
         historicalRoles: [
@@ -115,7 +115,7 @@ export const members: Member[] = [
         name: "Adarsh Rajesh",
         role: "Web Developer",
         image: "/images/members/Adarsh.jpg",
-        bio: "Adarsh is the main web developer on Ragnarok, with two years in FTC. He has programmed in HTML, CSS, JavaScript, and Python, and loves building projects, solving problems, and learning new skills.",
+        bio: "Adarsh is a web developer on Ragnarok, with two years in FTC. He has programmed in HTML, CSS, JavaScript, and Python, and loves building projects, solving problems, and learning new skills.",
         years: [2024, 2025],
         historicalRoles: [{ year: 2024, role: "Web Developer" }],
     },
