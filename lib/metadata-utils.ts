@@ -157,6 +157,43 @@ export function generateResourcesPageMetadata(): Metadata {
 }
 
 /**
+ * Generate metadata for Brand page
+ */
+export function generateBrandPageMetadata(): Metadata {
+    return {
+        title: "Brand Guidelines",
+        description: `Brand guidelines and logo usage for ${seoConfig.team.fullName}. Download assets and learn how to properly use the Ragnarok brand.`,
+        keywords: [
+            ...seoConfig.keywords,
+            "brand guidelines",
+            "logo usage",
+            "brand assets",
+            "Ragnarok logo",
+            "FTC team branding",
+        ],
+        openGraph: {
+            title: `Brand Guidelines | ${seoConfig.siteName}`,
+            description: `Brand guidelines and logo usage for ${seoConfig.siteName}`,
+            url: `${seoConfig.siteUrl}/brand`,
+            siteName: seoConfig.siteName,
+            images: [seoConfig.images.ogImage],
+            locale: "en_US",
+            type: "website",
+        },
+        twitter: {
+            card: "summary_large_image",
+            title: `Brand Guidelines | ${seoConfig.siteName}`,
+            description: `Brand guidelines and logo usage for ${seoConfig.siteName}`,
+            creator: seoConfig.social.twitter,
+            images: [seoConfig.images.ogImage.url],
+        },
+        alternates: {
+            canonical: `${seoConfig.siteUrl}/brand`,
+        },
+    };
+}
+
+/**
  * Generate metadata for Season page
  * TODO: Use in app/seasons/[slug]/page.tsx
  */

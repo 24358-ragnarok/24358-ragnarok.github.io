@@ -28,6 +28,15 @@ export interface Resource {
 
 export const resources: Resource[] = [
     {
+        id: "ragnarok-code",
+        category: "code",
+        title: "Ragnarok Open Source Code",
+        description:
+            "We share our code openly–just email and let us know if you use it! Our complete robot codebase for the Decode season.",
+        url: "https://github.com/24358-ragnarok/Decode",
+        icon: "Code",
+    },
+    {
         id: "pedro-pathing",
         category: "tools",
         title: "Pedro Pathing",
@@ -46,15 +55,6 @@ export const resources: Resource[] = [
         icon: "Zap",
     },
     {
-        id: "ragnarok-code",
-        category: "code",
-        title: "Ragnarok Open Source Code",
-        description:
-            "We share our code openly–just email and let us know if you use it! Our complete robot codebase for the Decode season.",
-        url: "https://github.com/24358-ragnarok/Decode",
-        icon: "Code",
-    },
-    {
         id: "ftc-official-resources",
         category: "official",
         title: "Official FTC Event Resources & Materials",
@@ -69,7 +69,7 @@ export const resources: Resource[] = [
         title: "Contact Our Head Developer",
         description:
             "Have questions about our code or resources? Reach out to Ben, our Head Developer and Co-Captain.",
-        url: "mailto:ben@bboonstra.dev",
+        url: "mailto:ben@ragnarokftc.com",
         icon: "Mail",
     },
 ];

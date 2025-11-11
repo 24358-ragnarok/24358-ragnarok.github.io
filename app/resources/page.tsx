@@ -58,6 +58,31 @@ export default function ResourcesPage() {
                             resources.length === 1 ? "max-w-2xl mx-auto" : ""
                         }`}
                     >
+                        {/* Brand Guidelines Card */}
+                        <Link
+                            href="/brand"
+                            className="group card card-hover glow-border bg-gradient-to-br from-elite-gold/20 to-yellow-500/20 border-elite-gold/30"
+                        >
+                            <div className="flex items-start gap-4">
+                                <div className="shrink-0 p-2 rounded-lg bg-ash-black/40 group-hover:bg-ash-black/60 transition-colors">
+                                    <BookOpen className="w-8 h-8 text-gray-300 group-hover:text-elite-gold transition-colors" />
+                                </div>
+                                <div className="flex-1 min-w-0">
+                                    <div className="flex items-start justify-between gap-4 mb-3">
+                                        <h3 className="text-2xl font-bold text-white font-display group-hover:text-elite-gold transition-colors">
+                                            Brand Guidelines
+                                        </h3>
+                                        <ArrowRightIcon className="w-5 h-5 text-gray-400 group-hover:text-elite-gold group-hover:translate-x-1 transition-all shrink-0 mt-1" />
+                                    </div>
+                                    <p className="text-gray-300 leading-relaxed">
+                                        Download assets and learn how to
+                                        properly use the Ragnarok brand and
+                                        logo.
+                                    </p>
+                                </div>
+                            </div>
+                        </Link>
+
                         {resources.map((resource) => {
                             const isExternal =
                                 resource.url.startsWith("http") &&

@@ -54,6 +54,9 @@ export const seoConfig = {
         "Robot Design",
         "CAD Design",
         "Engineering Notebook",
+
+        "Metallum Ultorum",
+        "Metallum Ultorem",
     ],
 
     // Team Information
