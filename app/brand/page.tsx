@@ -6,8 +6,12 @@ import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { generateBrandPageMetadata } from "@/lib/metadata-utils";
 import { readFileSync, statSync } from "fs";
 import { join } from "path";
+import { unstable_cache } from "next/cache";
 
 export const metadata: Metadata = generateBrandPageMetadata();
+
+// Enable page-level caching - revalidate every hour
+export const revalidate = 3600;
 
 // Helper function to format file size
 function formatFileSize(bytes: number): string {
@@ -43,62 +47,74 @@ function getSvgDimensions(
     return null;
 }
 
-// Get download file information
-function getDownloadInfo() {
-    const downloads = [
-        {
-            name: "White Logo",
-            description: "High-resolution logo for use on dark backgrounds",
-            url: "/images/logo.svg",
-            format: "SVG",
-            filePath: "public/images/logo.svg",
-        },
-        {
-            name: "Black Logo",
-            description: "High-resolution logo for use on light backgrounds",
-            url: "/images/logo-black.svg",
-            format: "SVG",
-            filePath: "public/images/logo-black.svg",
-        },
-        {
-            name: "With Text",
-            description: "Full logo with 24358 Ragnarok text in preferred font",
-            url: "/images/brand/with-text.pdf",
-            format: "PDF",
-            filePath: "public/images/brand/with-text.pdf",
-        },
-    ];
+// Get download file information (cached)
+const getDownloadInfo = unstable_cache(
+    async () => {
+        const downloads = [
+            {
+                name: "White Logo",
+                description: "High-resolution logo for use on dark backgrounds",
+                url: "/images/logo.svg",
+                format: "SVG",
+                filePath: "public/images/logo.svg",
+            },
+            {
+                name: "Black Logo",
+                description:
+                    "High-resolution logo for use on light backgrounds",
+                url: "/images/logo-black.svg",
+                format: "SVG",
+                filePath: "public/images/logo-black.svg",
+            },
+            {
+                name: "With Text",
+                description:
+                    "Full logo with 24358 Ragnarok text in preferred font",
+                url: "/images/brand/with-text.pdf",
+                format: "PDF",
+                filePath: "public/images/brand/with-text.pdf",
+            },
+        ];
 
-    return downloads.map((download) => {
-        try {
-            const fullPath = join(process.cwd(), download.filePath);
-            const stats = statSync(fullPath);
-            const fileSize = formatFileSize(stats.size);
+        return downloads.map((download) => {
+            try {
+                const fullPath = join(process.cwd(), download.filePath);
+                const stats = statSync(fullPath);
+                const fileSize = formatFileSize(stats.size);
 
-            let dimensions: string | null = null;
-            if (download.format === "SVG") {
-                const svgContent = readFileSync(fullPath, "utf-8");
-                const dims = getSvgDimensions(svgContent);
-                if (dims) {
-                    dimensions = `${dims.width} × ${dims.height} px`;
+                let dimensions: string | null = null;
+                if (download.format === "SVG") {
+                    const svgContent = readFileSync(fullPath, "utf-8");
+                    const dims = getSvgDimensions(svgContent);
+                    if (dims) {
+                        dimensions = `${dims.width} × ${dims.height} px`;
+                    }
                 }
-            }
 
-            return {
-                ...download,
-                fileSize,
-                dimensions,
-            };
-        } catch (error) {
-            console.error(`Error reading file ${download.filePath}:`, error);
-            return {
-                ...download,
-                fileSize: "Unknown",
-                dimensions: null,
-            };
-        }
-    });
-}
+                return {
+                    ...download,
+                    fileSize,
+                    dimensions,
+                };
+            } catch (error) {
+                console.error(
+                    `Error reading file ${download.filePath}:`,
+                    error
+                );
+                return {
+                    ...download,
+                    fileSize: "Unknown",
+                    dimensions: null,
+                };
+            }
+        });
+    },
+    ["brand-downloads"],
+    {
+        revalidate: 3600, // Cache for 1 hour
+        tags: ["brand-assets"],
+    }
+);
 
 const logoExamples = [
     {
@@ -163,7 +179,7 @@ const logoExamples = [
 ];
 
 export default async function BrandPage() {
-    const downloads = getDownloadInfo();
+    const downloads = await getDownloadInfo();
 
     return (
         <>
