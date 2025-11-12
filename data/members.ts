@@ -156,7 +156,7 @@ export const members: Member[] = [
         name: "Ella Cahill",
         role: "Builder",
         image: "/images/members/ella.JPG",
-        bio: "Ella is a builder on the team, starting FTC this year. She enjoys creating strong and reliable parts for our robot and working with her teammates to make our designs come to life.",
+        bio: "Ella is a builder on the team, starting FTC this year. She enjoys creating strong and reliable parts for our robot and working with her teammates to make our designs come to life. Her favorite number is 67.",
         years: [2025],
     },
     {

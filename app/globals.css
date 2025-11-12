@@ -185,8 +185,8 @@ body.scrollbar-visible ::-webkit-scrollbar-thumb {
 }
 
 .btn-secondary {
-  background: rgba(255, 235, 41, 0.08);
-  color: var(--elite-gold);
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--color-white);
   padding: 0.9rem 2.3rem;
   border-radius: 999px;
   font-weight: 600;
@@ -197,14 +197,14 @@ body.scrollbar-visible ::-webkit-scrollbar-thumb {
   gap: 0.65rem;
   transition: border-color 0.25s ease, background 0.25s ease,
     transform 0.25s ease;
-  border: 1px solid rgba(255, 235, 41, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.45);
 }
 
 .btn-secondary:hover {
-  border-color: rgba(255, 235, 41, 0.8);
-  background: rgba(255, 235, 41, 0.18);
+  border-color: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.18);
   transform: translateY(-1px);
-  color: var(--elite-gold);
+  color: var(--color-white);
 }
 
 .gradient-text {
