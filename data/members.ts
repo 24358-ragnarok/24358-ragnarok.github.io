@@ -188,4 +188,13 @@ export const alumni: Member[] = [
         years: [2024, 2025],
         isAlumni: true,
     },
+    {
+        id: "aditya-pethe",
+        name: "Aditya Pethe",
+        role: "Founder",
+        image: "/images/members/aditya_pethe_pic.avif",
+        bio: "Aditya is the founder of this team, which he originally named 'Metallum Ultorum'. Now he is a mentor, providing feedback and advice for Ragnarok.",
+        years: [2023, 2024],
+        isAlumni: true,
+    }
 ];

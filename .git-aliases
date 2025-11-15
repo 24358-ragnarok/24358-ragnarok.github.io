@@ -1,0 +1,8 @@
+# Git Aliases
+# Add these to your ~/.gitconfig or run: git config --global alias.<name> '<command>'
+
+# Save all work, amend previous commit, and push
+# Usage: git save-points
+# This stages all changes, amends the last commit, and pushes as if that commit already had the data
+[alias]
+    save-points = "!f() { git add -A && git commit --amend --no-edit && git push --force-with-lease; }; f"

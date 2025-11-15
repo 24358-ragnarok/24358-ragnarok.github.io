@@ -43,6 +43,9 @@ export const points: PointsData = {
     Deepak: {
         code: -62,
     },
+    Grant: {
+        existing: 1_000_000_000,
+    },
 };
 
 /**
