@@ -9,6 +9,7 @@ User-agent: *
 Allow: /
 Disallow: /api/
 Disallow: /_next/static/
+Disallow: /points
 Crawl-delay: 1
 
 # Google - no crawl delay for optimal indexing
